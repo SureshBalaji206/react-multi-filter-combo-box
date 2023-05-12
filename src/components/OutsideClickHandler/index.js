@@ -3,26 +3,21 @@ import React from "react";
 export default function OutsideClickHandler({ children, onOutsideClick }) {
   const wrapperRef = React.useRef(null);
 
-  const handleClickOutside = (event) => {
-    console.log(wrapperRef, event);
-
+  const mouseDownHandler = (event) => {
     if (
       wrapperRef &&
       wrapperRef.current &&
-      wrapperRef.current.contains(event.target)
+      !wrapperRef.current.contains(event.target)
     ) {
       onOutsideClick();
     }
   };
 
   React.useEffect(() => {
-    document.addEventListener("mousedown", handleClickOutside);
+    document.addEventListener("mousedown", mouseDownHandler);
 
     () => {
-      document.removeEventListenerEventListener(
-        "mousedown",
-        handleClickOutside
-      );
+      document.removeEventListenerEventListener("mousedown", mouseDownHandler);
     };
   }, []);
 
