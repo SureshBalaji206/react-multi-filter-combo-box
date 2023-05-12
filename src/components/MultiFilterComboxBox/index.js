@@ -1,16 +1,16 @@
 import React from "react";
-import OutsideClickHandler from "../OutsideClickHandler";
+import ClickAwayListener from "../ClickAwayListener";
 
 export default function MultiFilterComboxBox() {
   return (
-    <OutsideClickHandler
-      onOutsideClick={() => {
+    <ClickAwayListener
+      clickAwayHandler={() => {
         console.log(
           "I am called whenever click happens outside of 'AnyOtherReactComponent' component"
         );
       }}
     >
       MultiFilterComboxBox
-    </OutsideClickHandler>
+    </ClickAwayListener>
   );
 }

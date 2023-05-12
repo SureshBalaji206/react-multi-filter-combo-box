@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function OutsideClickHandler({ children, onOutsideClick }) {
+export default function ClickAwayListener({ children, clickAwayHandler }) {
   const wrapperRef = React.useRef(null);
 
   const mouseDownHandler = (event) => {
@@ -9,7 +9,7 @@ export default function OutsideClickHandler({ children, onOutsideClick }) {
       wrapperRef.current &&
       !wrapperRef.current.contains(event.target)
     ) {
-      onOutsideClick();
+      clickAwayHandler();
     }
   };
 
