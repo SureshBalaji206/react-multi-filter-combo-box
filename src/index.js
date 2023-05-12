@@ -1,3 +1,3 @@
-import MultiFilterComboxBox from "./components/MultiFilterComboxBox/MultiFilterComboxBox";
+import MultiFilterComboxBox from "./components/MultiFilterComboxBox";
 
 export default MultiFilterComboxBox;

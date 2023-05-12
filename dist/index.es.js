@@ -1,1 +1,1 @@
-import t from"react";function e(){return t.createElement("div",null,"MultiFilterComboxBox")}export{e as default};
+import e from"react";function t({children:t,onOutsideClick:n}){const o=e.useRef(null),c=e=>{console.log(o,e),o&&o.current&&o.current.contains(e.target)&&n()};return e.useEffect((()=>{document.addEventListener("mousedown",c)}),[]),e.createElement("div",{ref:o},t)}function n(){return e.createElement(t,{onOutsideClick:()=>{console.log("I am called whenever click happens outside of 'AnyOtherReactComponent' component")}},"MultiFilterComboxBox")}export{n as default};
