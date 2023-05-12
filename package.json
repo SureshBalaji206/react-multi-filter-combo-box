@@ -1,6 +1,6 @@
 {
-  "name": "react-multi-filter-combo-box",
-  "version": "1.0.0",
+  "name": "@imsuresh206/test",
+  "version": "1.0.4",
   "description": "A Select control built with and for ReactJS",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
@@ -12,14 +12,7 @@
     "type": "git",
     "url": "git+https://github.com/SureshBalaji206/react-multi-filter-combo-box.git"
   },
-  "keywords": [
-    "combobox",
-    "multiselect",
-    "react",
-    "react-component",
-    "select",
-    "ui"
-  ],
+  "keywords": [],
   "author": "imsuresh206",
   "license": "ISC",
   "bugs": {
