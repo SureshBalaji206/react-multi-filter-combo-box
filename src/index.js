@@ -1,3 +1,7 @@
-import MultiFilterComboxBox from "./components/MultiFilterComboxBox";
+import React from "react";
 
-export default MultiFilterComboxBox;
+function MultiFilterComboBox() {
+  return <div>MultiFilterComboBox</div>;
+}
+
+export { MultiFilterComboBox };

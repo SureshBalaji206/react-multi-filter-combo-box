@@ -1,1 +1,1 @@
-import e from"react";function n({children:n,clickAwayHandler:t}){const r=e.useRef(null),c=e=>{r&&r.current&&!r.current.contains(e.target)&&t()};return e.useEffect((()=>{document.addEventListener("mousedown",c)}),[]),e.createElement("div",{ref:r},n)}function t(){return e.createElement(n,{clickAwayHandler:()=>{console.log("I am called whenever click happens outside of 'AnyOtherReactComponent' component")}},"MultiFilterComboxBox")}export{t as default};
+import t from"react";function e(){return t.createElement("div",null,"MultiFilterComboBox")}export{e as MultiFilterComboBox};
