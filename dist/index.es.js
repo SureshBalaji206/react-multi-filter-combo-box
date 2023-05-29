@@ -1,1 +1,1 @@
-import t from"react";function e(){return t.createElement("div",null,"MultiFilterComboBox")}export{e as MultiFilterComboBox};
+import e from"react";function o(){return e.createElement("div",null,"ComboBox")}export{o as ComboBox};
