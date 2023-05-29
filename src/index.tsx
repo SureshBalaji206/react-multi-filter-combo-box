@@ -1,5 +1,5 @@
-import React from "react";
-import styled from "@emotion/styled";
+import React from 'react';
+import styled from '@emotion/styled';
 
 interface ComboBoxPropType {
   backgroundColor: string;
@@ -11,7 +11,7 @@ interface RootContainerPropType {
 
 const RootContainer = styled.div`
   color: ${(props: RootContainerPropType) =>
-    props.backgroundColor ? props.backgroundColor : "turquoise"};
+    props.backgroundColor ? props.backgroundColor : 'turquoise'};
 `;
 
 function ComboBox({ backgroundColor }: ComboBoxPropType) {
