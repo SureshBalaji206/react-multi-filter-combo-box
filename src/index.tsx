@@ -1,7 +1,3 @@
-import React from 'react';
-
-function MultiFilterComboBox() {
-  return <div>MultiFilterComboBox</div>;
-}
+import MultiFilterComboBox from 'src/components/MultiFilterComboBox';
 
 export { MultiFilterComboBox };
