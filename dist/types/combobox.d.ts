@@ -10,9 +10,13 @@ export interface comboBoxSelectedItemsType {
     value: string;
 }
 export interface comboBoxType {
-    leftAdornment?: ReactNode;
-    rightAdornment?: ReactNode;
+    cancelText?: string;
     dataProvider: comboBoxDataProviderType[];
-    value: comboBoxSelectedItemsType[];
+    leftAdornment?: ReactNode;
     onComplete: (value: comboBoxSelectedItemsType[]) => void;
+    placeHolder?: string;
+    selectAllText?: string;
+    submitText?: string;
+    rightAdornment?: ReactNode;
+    value: comboBoxSelectedItemsType[];
 }

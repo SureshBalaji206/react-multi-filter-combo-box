@@ -29,59 +29,55 @@ export default function Popover({
   value,
 }: popoverType) {
   const [query] = React.useState<string>('');
-  const [options, setOptions] = React.useState<comboBoxSelectedItemsType[]>([]);
+
+  const [generatedOptions, setGeneratedOptions] = React.useState<
+    comboBoxSelectedItemsType[]
+  >([]);
 
   const [filteredOptions, setFilteredOptions] = React.useState<
     comboBoxSelectedItemsType[]
   >([]);
 
   React.useEffect(() => {
-    const generatedOptions = generateOptions(dataProvider, value);
-
-    setOptions(generatedOptions);
+    setGeneratedOptions(generateOptions(dataProvider, value));
   }, [dataProvider, value]);
 
   React.useEffect(() => {
     setFilteredOptions(
-      options.filter((option) => {
+      generatedOptions.filter((option) => {
         const labelElement = String(option.label).toLowerCase();
         const queryElement = String(query).toLowerCase();
 
         return labelElement.includes(queryElement);
       }),
     );
-  }, [query, options]);
+  }, [query, generatedOptions]);
 
   const isAllSelected = React.useMemo(() => {
-    if (options.length === 0) return false;
-
-    return Boolean(
-      options.length === options.filter((option) => option.isSelected).length,
-    );
-  }, [options]);
+    return Boolean(generatedOptions.length)
+      ? Boolean(
+          generatedOptions.length ===
+            generatedOptions.filter((option) => option.isSelected).length,
+        )
+      : false;
+  }, [generatedOptions]);
 
   const onStateChange = (identifier: string) => {
-    const modifedOptions = performStateChange(options, identifier);
-
-    setOptions(modifedOptions);
+    setGeneratedOptions(performStateChange(generatedOptions, identifier));
   };
 
   const onOnlyChange = (identifier: string) => {
-    const modifedOptions = performOnlyChange(options, identifier);
-
-    setOptions(modifedOptions);
+    setGeneratedOptions(performOnlyChange(generatedOptions, identifier));
   };
 
   const selectAllHandler = () => {
-    const modifedOptions = performSelectAllChange(options, !isAllSelected);
-
-    setOptions(modifedOptions);
+    setGeneratedOptions(
+      performSelectAllChange(generatedOptions, !isAllSelected),
+    );
   };
 
   const completeHandler = () => {
-    const selectedItems = filteredOptions.filter((item) => item.isSelected);
-
-    onComplete(selectedItems);
+    onComplete(filteredOptions.filter((item) => item.isSelected));
     closePopover();
   };
 

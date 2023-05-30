@@ -3,6 +3,15 @@ import {
   comboBoxSelectedItemsType,
 } from './types/combobox';
 
+export const getSelectedItemsPlaceHolder = (
+  selectedItems: comboBoxSelectedItemsType[],
+) => {
+  return selectedItems
+    .map((selectedItem) => selectedItem.label)
+    .join(', ')
+    .toString();
+};
+
 const sortAlphabetically = (
   element1: comboBoxDataProviderType,
   element2: comboBoxDataProviderType,
