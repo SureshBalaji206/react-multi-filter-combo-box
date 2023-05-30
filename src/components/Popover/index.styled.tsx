@@ -7,11 +7,10 @@ import {
 } from '../ComboBox/index.styled';
 
 export const PopoverContainer = styled.div`
-  border-radius: 9px;
+  background-color: #ffffff;
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
   left: 0;
   position: absolute;
-  top: calc(100% + 8px);
   z-index: 100;
   margin: 0px;
   height: ${root_container_height};

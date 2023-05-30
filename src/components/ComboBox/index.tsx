@@ -1,5 +1,6 @@
 import React from 'react';
 import Popover from '../Popover';
+import { comboBoxType } from '../../types/combobox';
 
 import {
   RootContainer,
@@ -8,14 +9,12 @@ import {
   ShowSelectedItemsContainer,
 } from './index.styled';
 
-import { comboBoxType } from '../../types/combobox';
-
-export default function MultiFilterComboxBox({
+export default function ComboBox({
   dataProvider = [],
-  onComplete,
+  value = [],
+  onComplete = () => null,
   leftAdornment = null,
   rightAdornment = null,
-  value = [],
 }: comboBoxType) {
   const popoverRef = React.useRef(null);
   const [toggle, setToggle] = React.useState<boolean>(false);

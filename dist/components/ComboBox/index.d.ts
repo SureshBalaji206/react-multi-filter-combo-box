@@ -1,3 +1,3 @@
 import React from 'react';
 import { comboBoxType } from '../../types/combobox';
-export default function MultiFilterComboxBox({ dataProvider, onComplete, leftAdornment, rightAdornment, value, }: comboBoxType): React.JSX.Element;
+export default function ComboBox({ dataProvider, value, onComplete, leftAdornment, rightAdornment, }: comboBoxType): React.JSX.Element;
