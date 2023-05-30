@@ -1,6 +1,6 @@
 {
   "name": "@imsuresh206/testing",
-  "version": "35.0.0",
+  "version": "41.0.0",
   "description": "A Select control built with and for ReactJS",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
@@ -60,7 +60,7 @@
     ]
   },
   "scripts": {
-    "rollup": "rollup -c",
+    "rollup": "eslint --fix src/**/*{.ts,.tsx} && prettier --write src/**/*{.ts,.tsx} && rollup -c",
     "lint:fix": "eslint --fix src/**/*{.ts,.tsx}",
     "prettierx:all": "prettier --write src/**/*{.ts,.tsx}",
     "test": "echo \"Error: no test specified\" && exit 1"
