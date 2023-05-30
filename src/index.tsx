@@ -1,13 +1,6 @@
 import React from 'react';
 import styled from '@emotion/styled';
-
-interface ComboBoxPropType {
-  backgroundColor: string;
-}
-
-interface RootContainerPropType {
-  backgroundColor: string;
-}
+import { ComboBoxPropType, RootContainerPropType } from 'src/types';
 
 const RootContainer = styled.div`
   color: ${(props: RootContainerPropType) =>

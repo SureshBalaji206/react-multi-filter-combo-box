@@ -1,6 +1,4 @@
 import React from 'react';
-interface ComboBoxPropType {
-    backgroundColor: string;
-}
+import { ComboBoxPropType } from 'src/types';
 declare function ComboBox({ backgroundColor }: ComboBoxPropType): React.JSX.Element;
 export { ComboBox };
