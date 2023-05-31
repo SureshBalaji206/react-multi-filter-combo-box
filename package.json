@@ -1,9 +1,10 @@
 {
   "name": "@imsuresh206/testing",
-  "version": "41.0.0",
+  "version": "42.0.0",
   "description": "A Select control built with and for ReactJS",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
+  "files": ["dist"],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/SureshBalaji206/react-multi-filter-combo-box.git"
