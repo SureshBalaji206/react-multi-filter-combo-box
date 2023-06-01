@@ -1,5 +1,9 @@
 import { ReactNode } from 'react';
 
+export interface ShowSelectedItemsContainerType {
+  hasLeftAdornment: boolean;
+}
+
 export interface comboBoxDataProviderType {
   label: string;
   value: string;

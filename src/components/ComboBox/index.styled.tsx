@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+import { ShowSelectedItemsContainerType } from 'src/types/combobox';
 
 export const global_container_padding = '0px 10px';
 export const global_border_style = '1px solid lightgray';
@@ -27,7 +28,8 @@ export const IconContainer = styled.div`
 
 export const ShowSelectedItemsContainer = styled.div`
   height: 100%;
-  width: calc(100% - 80px);
+  width: ${(props: ShowSelectedItemsContainerType) =>
+    props.hasLeftAdornment ? `calc(100% - 80px)` : `calc(100% - 40px)`};
   margin-top: 15px;
   white-space: nowrap;
   text-overflow: ellipsis;
