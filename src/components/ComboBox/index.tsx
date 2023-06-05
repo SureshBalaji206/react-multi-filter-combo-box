@@ -1,10 +1,9 @@
 import React from 'react';
 import { ThemeProvider } from '@emotion/react';
-
 import Popover from '../Popover';
-import useClickOutside from '../../hooks/useClickOutside';
+import { defaultLocale } from 'src/constants';
 import { comboBoxType } from '../../types/combobox';
-import { defaultKeyStrings } from '../../constants';
+import useClickOutside from '../../hooks/useClickOutside';
 import { getSelectedItemsPlaceHolder } from '../../helpers';
 
 import {
@@ -15,14 +14,16 @@ import {
 } from './index.styled';
 
 export default function ComboBox({
-  cancelText = defaultKeyStrings.cancel,
   dataProvider = [],
   leftAdornment = null,
+  locale = {
+    cancel: defaultLocale.cancel,
+    placeHolder: defaultLocale.placeHolder,
+    selectAll: defaultLocale.selectAll,
+    submit: defaultLocale.submit,
+  },
   onComplete = () => null,
-  placeHolder = defaultKeyStrings.placeHolder,
   rightAdornment = null,
-  selectAllText = defaultKeyStrings.selectAll,
-  submitText = defaultKeyStrings.okay,
   value = [],
 }: comboBoxType) {
   const popoverRef = React.useRef(null);
@@ -44,7 +45,7 @@ export default function ComboBox({
   const renderPlaceHolder = React.useMemo(() => {
     return Boolean(value.length)
       ? getSelectedItemsPlaceHolder(value)
-      : placeHolder;
+      : locale.placeHolder;
   }, [value]);
 
   const renderRightAdornment = React.useMemo(() => {
@@ -61,11 +62,9 @@ export default function ComboBox({
         <Popover
           popoverRef={popoverRef}
           closePopover={closePopover}
-          cancelText={cancelText}
           dataProvider={dataProvider}
+          locale={locale}
           onComplete={onComplete}
-          selectAllText={selectAllText}
-          submitText={submitText}
           value={value}
         />
       );
@@ -76,11 +75,9 @@ export default function ComboBox({
     toggle,
     popoverRef,
     closePopover,
-    cancelText,
     dataProvider,
+    locale,
     onComplete,
-    selectAllText,
-    submitText,
     value,
   ]);
 

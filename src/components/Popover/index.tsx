@@ -25,6 +25,7 @@ export default function Popover({
   popoverRef,
   closePopover,
   dataProvider,
+  locale,
   onComplete,
   value,
 }: popoverType) {
@@ -92,7 +93,7 @@ export default function Popover({
             onChange={selectAllHandler}
           />
         </CheckboxContainer>
-        <LabelContainer>Select All</LabelContainer>
+        <LabelContainer>{locale.selectAll}</LabelContainer>
       </SelectAllContainer>
       <ListContainerContainer>
         {filteredOptions.map((dataItem) => {
@@ -119,15 +120,15 @@ export default function Popover({
                   onOnlyChange(dataItem.value);
                 }}
               >
-                Only
+                {locale.only}
               </OnlyLabelContainer>
             </RowContainer>
           );
         })}
       </ListContainerContainer>
       <ButtonsContainer>
-        <div onClick={closePopover}>cancel</div>
-        <div onClick={completeHandler}>ok</div>
+        <div onClick={closePopover}>{locale.cancel}</div>
+        <div onClick={completeHandler}>{locale.submit}</div>
       </ButtonsContainer>
     </PopoverContainer>
   );

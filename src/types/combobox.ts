@@ -1,5 +1,12 @@
 import { ReactNode } from 'react';
 
+export interface localeStringType {
+  cancel?: string;
+  only?: string;
+  placeHolder?: string;
+  selectAll?: string;
+  submit?: string;
+}
 export interface ShowSelectedItemsContainerType {
   hasLeftAdornment: boolean;
 }
@@ -17,13 +24,10 @@ export interface comboBoxSelectedItemsType {
 }
 
 export interface comboBoxType {
-  cancelText?: string;
   dataProvider: comboBoxDataProviderType[];
   leftAdornment?: ReactNode;
+  locale?: localeStringType;
   onComplete: (value: comboBoxSelectedItemsType[]) => void;
-  placeHolder?: string;
-  selectAllText?: string;
-  submitText?: string;
   rightAdornment?: ReactNode;
   value: comboBoxSelectedItemsType[];
 }
