@@ -16,12 +16,7 @@ import {
 export default function ComboBox({
   dataProvider = [],
   leftAdornment = null,
-  locale = {
-    cancel: defaultLocale.cancel,
-    placeHolder: defaultLocale.placeHolder,
-    selectAll: defaultLocale.selectAll,
-    submit: defaultLocale.submit,
-  },
+  locale,
   onComplete = () => null,
   rightAdornment = null,
   value = [],
@@ -45,8 +40,10 @@ export default function ComboBox({
   const renderPlaceHolder = React.useMemo(() => {
     return Boolean(value.length)
       ? getSelectedItemsPlaceHolder(value)
-      : locale.placeHolder;
-  }, [value]);
+      : locale
+      ? locale.placeHolder
+      : defaultLocale.placeHolder;
+  }, [value, locale]);
 
   const renderRightAdornment = React.useMemo(() => {
     return rightAdornment ? (
@@ -63,7 +60,7 @@ export default function ComboBox({
           popoverRef={popoverRef}
           closePopover={closePopover}
           dataProvider={dataProvider}
-          locale={locale}
+          locale={locale ? locale : {}}
           onComplete={onComplete}
           value={value}
         />

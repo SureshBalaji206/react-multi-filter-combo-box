@@ -1,6 +1,7 @@
 import React from 'react';
 import { popoverType } from '../../types/popover';
 import { comboBoxSelectedItemsType } from '../../types/combobox';
+import { defaultLocale } from 'src/constants';
 
 import {
   generateOptions,
@@ -93,7 +94,9 @@ export default function Popover({
             onChange={selectAllHandler}
           />
         </CheckboxContainer>
-        <LabelContainer>{locale.selectAll}</LabelContainer>
+        <LabelContainer>
+          {locale ? locale.selectAll : defaultLocale.selectAll}
+        </LabelContainer>
       </SelectAllContainer>
       <ListContainerContainer>
         {filteredOptions.map((dataItem) => {
@@ -120,15 +123,19 @@ export default function Popover({
                   onOnlyChange(dataItem.value);
                 }}
               >
-                {locale.only}
+                {locale ? locale.only : defaultLocale.only}
               </OnlyLabelContainer>
             </RowContainer>
           );
         })}
       </ListContainerContainer>
       <ButtonsContainer>
-        <div onClick={closePopover}>{locale.cancel}</div>
-        <div onClick={completeHandler}>{locale.submit}</div>
+        <div onClick={closePopover}>
+          {locale ? locale.cancel : defaultLocale.cancel}
+        </div>
+        <div onClick={completeHandler}>
+          {locale ? locale.submit : defaultLocale.submit}
+        </div>
       </ButtonsContainer>
     </PopoverContainer>
   );
