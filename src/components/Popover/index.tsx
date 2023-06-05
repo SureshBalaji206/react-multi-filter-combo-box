@@ -95,7 +95,9 @@ export default function Popover({
           />
         </CheckboxContainer>
         <LabelContainer>
-          {locale ? locale.selectAll : defaultLocale.selectAll}
+          {locale && locale.selectAll
+            ? locale.selectAll
+            : defaultLocale.selectAll}
         </LabelContainer>
       </SelectAllContainer>
       <ListContainerContainer>
@@ -123,7 +125,7 @@ export default function Popover({
                   onOnlyChange(dataItem.value);
                 }}
               >
-                {locale ? locale.only : defaultLocale.only}
+                {locale && locale.only ? locale.only : defaultLocale.only}
               </OnlyLabelContainer>
             </RowContainer>
           );
@@ -131,10 +133,10 @@ export default function Popover({
       </ListContainerContainer>
       <ButtonsContainer>
         <div onClick={closePopover}>
-          {locale ? locale.cancel : defaultLocale.cancel}
+          {locale && locale.cancel ? locale.cancel : defaultLocale.cancel}
         </div>
         <div onClick={completeHandler}>
-          {locale ? locale.submit : defaultLocale.submit}
+          {locale && locale.submit ? locale.submit : defaultLocale.submit}
         </div>
       </ButtonsContainer>
     </PopoverContainer>

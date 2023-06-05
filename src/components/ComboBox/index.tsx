@@ -40,7 +40,7 @@ export default function ComboBox({
   const renderPlaceHolder = React.useMemo(() => {
     return Boolean(value.length)
       ? getSelectedItemsPlaceHolder(value)
-      : locale
+      : locale && locale.placeHolder
       ? locale.placeHolder
       : defaultLocale.placeHolder;
   }, [value, locale]);
