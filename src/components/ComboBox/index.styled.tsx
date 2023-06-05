@@ -15,7 +15,6 @@ export const DisplayContainer = styled.div`
   width: ${root_container_width};
   display: flex;
   align-items: center;
-  border: 1px solid lightgray;
 `;
 
 export const IconContainer = styled.div`
@@ -27,11 +26,10 @@ export const IconContainer = styled.div`
 `;
 
 export const ShowSelectedItemsContainer = styled.div`
-  height: 100%;
-  width: ${(props: ShowSelectedItemsContainerType) =>
-    props.hasLeftAdornment ? `calc(100% - 80px)` : `calc(100% - 40px)`};
-  margin-top: 15px;
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
+  padding: 0px 5px;
+  width: ${(props: ShowSelectedItemsContainerType) =>
+    props.hasLeftAdornment ? `calc(100% - 80px)` : `calc(100% - 40px)`};
 `;

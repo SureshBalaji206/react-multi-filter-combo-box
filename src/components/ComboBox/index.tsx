@@ -1,4 +1,6 @@
 import React from 'react';
+import { ThemeProvider } from '@emotion/react';
+
 import Popover from '../Popover';
 import useClickOutside from '../../hooks/useClickOutside';
 import { comboBoxType } from '../../types/combobox';
@@ -82,16 +84,24 @@ export default function ComboBox({
     value,
   ]);
 
+  const theme = {
+    colors: {
+      primary: 'hotpink',
+    },
+  };
+
   return (
-    <RootContainer>
-      <DisplayContainer>
-        {renderLeftAdornment}
-        <ShowSelectedItemsContainer hasLeftAdornment={Boolean(leftAdornment)}>
-          {renderPlaceHolder}
-        </ShowSelectedItemsContainer>
-        {renderRightAdornment}
-      </DisplayContainer>
-      {renderPopover}
-    </RootContainer>
+    <ThemeProvider theme={theme}>
+      <RootContainer>
+        <DisplayContainer>
+          {renderLeftAdornment}
+          <ShowSelectedItemsContainer hasLeftAdornment={Boolean(leftAdornment)}>
+            {renderPlaceHolder}
+          </ShowSelectedItemsContainer>
+          {renderRightAdornment}
+        </DisplayContainer>
+        {renderPopover}
+      </RootContainer>
+    </ThemeProvider>
   );
 }
