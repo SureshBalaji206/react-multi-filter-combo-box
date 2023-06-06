@@ -14,6 +14,7 @@ import {
 } from './index.styled';
 
 export default function ComboBox({
+  colors,
   dataProvider = [],
   leftAdornment = null,
   locale,
@@ -59,6 +60,7 @@ export default function ComboBox({
         <Popover
           popoverRef={popoverRef}
           closePopover={closePopover}
+          colors={colors}
           dataProvider={dataProvider}
           locale={locale ? locale : {}}
           onComplete={onComplete}
@@ -72,17 +74,20 @@ export default function ComboBox({
     toggle,
     popoverRef,
     closePopover,
+    colors,
     dataProvider,
     locale,
     onComplete,
     value,
   ]);
 
-  const theme = {
-    colors: {
-      primary: 'hotpink',
-    },
-  };
+  const theme = React.useMemo(() => {
+    return {
+      colors: {
+        primary: colors && colors.primary ? colors.primary : 'red',
+      },
+    };
+  }, [colors]);
 
   return (
     <ThemeProvider theme={theme}>

@@ -1,6 +1,7 @@
 import { RefObject } from 'react';
 
 import {
+  colorsType,
   comboBoxDataProviderType,
   comboBoxSelectedItemsType,
   localeStringType,
@@ -8,6 +9,7 @@ import {
 
 export interface popoverType {
   closePopover: () => void;
+  colors: colorsType;
   dataProvider: comboBoxDataProviderType[];
   locale: localeStringType;
   onComplete: (value: comboBoxSelectedItemsType[]) => void;

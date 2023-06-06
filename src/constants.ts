@@ -1,9 +1,7 @@
-import { localeStringType } from './types/combobox';
-
-export const defaultLocale: localeStringType = {
-  cancel: 'Cancel',
+export const defaultLocale = {
+  cancel: 'CANCEL',
   only: 'Only',
   placeHolder: 'Select...',
   selectAll: 'Select All',
-  submit: 'Okay',
+  submit: 'OK',
 };

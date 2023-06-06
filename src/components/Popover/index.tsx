@@ -1,7 +1,8 @@
 import React from 'react';
+import CustomButton from '../CustomButton';
+import { defaultLocale } from 'src/constants';
 import { popoverType } from '../../types/popover';
 import { comboBoxSelectedItemsType } from '../../types/combobox';
-import { defaultLocale } from 'src/constants';
 
 import {
   generateOptions,
@@ -25,6 +26,7 @@ import {
 export default function Popover({
   popoverRef,
   closePopover,
+  colors,
   dataProvider,
   locale,
   onComplete,
@@ -83,6 +85,11 @@ export default function Popover({
     closePopover();
   };
 
+  const checkBoxThemeColor = React.useMemo(
+    () => (colors && colors.primary ? colors.primary : 'auto'),
+    [colors],
+  );
+
   return (
     <PopoverContainer ref={popoverRef}>
       <SearchContainer />
@@ -90,6 +97,7 @@ export default function Popover({
         <CheckboxContainer>
           <input
             type='checkbox'
+            style={{ accentColor: checkBoxThemeColor }}
             checked={isAllSelected}
             onChange={selectAllHandler}
           />
@@ -107,6 +115,7 @@ export default function Popover({
               <CheckboxContainer>
                 <input
                   type='checkbox'
+                  style={{ accentColor: checkBoxThemeColor }}
                   checked={dataItem.isSelected}
                   onChange={() => {
                     onStateChange(dataItem.value);
@@ -132,12 +141,14 @@ export default function Popover({
         })}
       </ListContainerContainer>
       <ButtonsContainer>
-        <div onClick={closePopover}>
-          {locale && locale.cancel ? locale.cancel : defaultLocale.cancel}
-        </div>
-        <div onClick={completeHandler}>
-          {locale && locale.submit ? locale.submit : defaultLocale.submit}
-        </div>
+        <CustomButton
+          clickHandler={closePopover}
+          text={locale && locale.cancel ? locale.cancel : defaultLocale.cancel}
+        />
+        <CustomButton
+          clickHandler={completeHandler}
+          text={locale && locale.submit ? locale.submit : defaultLocale.submit}
+        />
       </ButtonsContainer>
     </PopoverContainer>
   );

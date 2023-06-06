@@ -1,4 +1,7 @@
 import { ReactNode } from 'react';
+export interface colorsType {
+    primary?: string;
+}
 export interface localeStringType {
     cancel?: string;
     only?: string;
@@ -20,6 +23,7 @@ export interface comboBoxSelectedItemsType {
     value: string;
 }
 export interface comboBoxType {
+    colors: colorsType;
     dataProvider: comboBoxDataProviderType[];
     leftAdornment?: ReactNode;
     locale?: localeStringType;
