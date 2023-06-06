@@ -30,7 +30,7 @@ export const ShowSelectedItemsContainer = styled.div`
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
-  padding: 0px 5px;
+  padding: ${global_container_padding};
   width: ${(props: ShowSelectedItemsContainerType) =>
     props.hasLeftAdornment ? `calc(100% - 80px)` : `calc(100% - 40px)`};
 `;

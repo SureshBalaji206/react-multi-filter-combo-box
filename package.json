@@ -1,6 +1,6 @@
 {
   "name": "@imsuresh206/testing",
-  "version": "62.20.0",
+  "version": "62.22.0",
   "description": "A Select control built with and for ReactJS",
   "main": "dist/index.js",
   "module": "dist/index.es.js",

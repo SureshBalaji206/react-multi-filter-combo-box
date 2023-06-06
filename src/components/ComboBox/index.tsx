@@ -84,7 +84,7 @@ export default function ComboBox({
   const theme = React.useMemo(() => {
     return {
       colors: {
-        primary: colors && colors.primary ? colors.primary : 'red',
+        primary: colors && colors.primary ? colors.primary : 'unset',
       },
     };
   }, [colors]);
