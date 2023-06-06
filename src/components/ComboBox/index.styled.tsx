@@ -7,6 +7,7 @@ export const root_container_height = '330px';
 export const root_container_width = '280px';
 
 export const RootContainer = styled.div`
+  font-size: 0.875rem;
   position: relative;
 `;
 

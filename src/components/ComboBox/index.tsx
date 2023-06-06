@@ -47,9 +47,9 @@ export default function ComboBox({
 
   const renderRightAdornment = React.useMemo(() => {
     return rightAdornment ? (
-      <IconContainer onClick={openPopover}>{rightAdornment}</IconContainer>
+      <IconContainer>{rightAdornment}</IconContainer>
     ) : (
-      <IconContainer onClick={openPopover}>R</IconContainer>
+      <IconContainer>R</IconContainer>
     );
   }, [rightAdornment]);
 
@@ -87,7 +87,7 @@ export default function ComboBox({
   return (
     <ThemeProvider theme={theme}>
       <RootContainer>
-        <DisplayContainer>
+        <DisplayContainer onClick={openPopover}>
           {renderLeftAdornment}
           <ShowSelectedItemsContainer hasLeftAdornment={Boolean(leftAdornment)}>
             {renderPlaceHolder}
