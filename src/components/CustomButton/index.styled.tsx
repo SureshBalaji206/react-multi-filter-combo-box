@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import styled from '@emotion/styled';
 
 export const CustomButtonContainer = styled.button`
@@ -6,7 +7,8 @@ export const CustomButtonContainer = styled.button`
   border: none;
   box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;
   box-sizing: border-box;
-  color: rgba(0, 0, 0, 0.85);
+  color: ${(props: any) =>
+    props.theme.colors.primary ? props.theme.colors.primary : `black`};
   cursor: pointer;
   display: inline-flex;
   font-family: system-ui, -apple-system, system-ui, 'Helvetica Neue', Helvetica,

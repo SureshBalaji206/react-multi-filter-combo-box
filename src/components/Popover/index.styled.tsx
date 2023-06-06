@@ -1,4 +1,6 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import styled from '@emotion/styled';
+
 import {
   global_border_style,
   global_container_padding,
@@ -76,4 +78,6 @@ export const OnlyLabelContainer = styled.div`
   cursor: pointer;
   text-align: center;
   width: 50px;
+  color: ${(props: any) =>
+    props.theme.colors.primary ? props.theme.colors.primary : `black`};
 `;
