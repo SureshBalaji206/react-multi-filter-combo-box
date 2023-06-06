@@ -8,12 +8,13 @@ export const root_container_width = '280px';
 
 export const RootContainer = styled.div`
   font-size: 0.875rem;
+  width: ${root_container_width};
   position: relative;
 `;
 
 export const DisplayContainer = styled.div`
   height: 35px;
-  width: ${root_container_width};
+  width: 100%;
   display: flex;
   align-items: center;
 `;

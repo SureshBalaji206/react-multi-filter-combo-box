@@ -23,6 +23,8 @@ import {
   SelectAllContainer,
 } from './index.styled';
 
+const isOnlyRequired = false;
+
 export default function Popover({
   popoverRef,
   closePopover,
@@ -129,13 +131,15 @@ export default function Popover({
               >
                 {dataItem.label}
               </LabelContainer>
-              <OnlyLabelContainer
-                onClick={() => {
-                  onOnlyChange(dataItem.value);
-                }}
-              >
-                {locale && locale.only ? locale.only : defaultLocale.only}
-              </OnlyLabelContainer>
+              {isOnlyRequired && (
+                <OnlyLabelContainer
+                  onClick={() => {
+                    onOnlyChange(dataItem.value);
+                  }}
+                >
+                  {locale && locale.only ? locale.only : defaultLocale.only}
+                </OnlyLabelContainer>
+              )}
             </RowContainer>
           );
         })}
