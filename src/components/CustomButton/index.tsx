@@ -1,12 +1,15 @@
 import React from 'react';
-import { CustomButtonContainer } from './index.styled';
+import { ActionButtonContainer, TextButtonContainer } from './index.styled';
 import { CustomButtonPropsType } from 'src/types/button';
 
-export default function CustomButton({
-  clickHandler,
-  text,
-}: CustomButtonPropsType) {
+export function ActionButton({ clickHandler, text }: CustomButtonPropsType) {
   return (
-    <CustomButtonContainer onClick={clickHandler}>{text}</CustomButtonContainer>
+    <ActionButtonContainer onClick={clickHandler}>{text}</ActionButtonContainer>
+  );
+}
+
+export function TextButton({ clickHandler, text }: CustomButtonPropsType) {
+  return (
+    <TextButtonContainer onClick={clickHandler}>{text}</TextButtonContainer>
   );
 }

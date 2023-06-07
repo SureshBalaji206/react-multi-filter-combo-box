@@ -22,28 +22,48 @@ import*as e from"react";import t,{forwardRef as r,useContext as n,useEffect as o
   touch-action: manipulation;
   vertical-align: baseline;
   width: auto;
-`;function ft({clickHandler:e,text:r}){return t.createElement(pt,{onClick:e},r)}const mt={cancel:"CANCEL",only:"Only",placeHolder:"Select...",selectAll:"Select All",submit:"OK"},ht=(e,t)=>Boolean(e.find((e=>e.value===t.value))),vt=(e,t)=>{if(e){return e.sort(((e,t)=>((e,t)=>{const r=e.label,n=t.label;return r<n?-1:r>n?1:0})(e,t))).map((e=>({label:e.label,value:e.value,isSelected:ht(t,e)})))}return e},gt=(e,t)=>e.map((e=>e.value===t?Object.assign(Object.assign({},e),{isSelected:!e.isSelected}):Object.assign({},e))),yt=(e,t)=>e.map((e=>Object.assign(Object.assign({},e),{isSelected:t}))),bt="0px 10px",Et="1px solid lightgray",xt="280px",wt=dt.div`
+`,ft=dt.button`
+  background-color: #ffffff;
+  border: none;
+  cursor: pointer;
+  font-family: system-ui, -apple-system, system-ui, 'Helvetica Neue', Helvetica,
+    Arial, sans-serif;
   font-size: 0.875rem;
-  width: ${xt};
+  line-height: 1.25;
+  margin: 0;
+  padding: 0px calc(1.5rem - 1px);
+  text-align: left;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  vertical-align: baseline;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  width: calc(100% - 40px);
+  padding: 0px 5px;
+`;function mt({clickHandler:e,text:r}){return t.createElement(pt,{onClick:e},r)}function ht({clickHandler:e,text:r}){return t.createElement(ft,{onClick:e},r)}const vt={cancel:"CANCEL",only:"Only",placeHolder:"Select...",selectAll:"Select All",submit:"OK"},gt=(e,t)=>Boolean(e.find((e=>e.value===t.value))),yt=(e,t)=>{if(e){return e.sort(((e,t)=>((e,t)=>{const r=e.label,n=t.label;return r<n?-1:r>n?1:0})(e,t))).map((e=>({label:e.label,value:e.value,isSelected:gt(t,e)})))}return e},bt=(e,t)=>e.map((e=>e.value===t?Object.assign(Object.assign({},e),{isSelected:!e.isSelected}):Object.assign({},e))),Et=(e,t)=>e.map((e=>Object.assign(Object.assign({},e),{isSelected:t}))),xt="0px 10px",wt="1px solid lightgray",kt="280px",_t=dt.div`
+  font-size: 0.875rem;
+  width: ${kt};
   position: relative;
-`,kt=dt.div`
+`,Nt=dt.div`
   height: 35px;
   width: 100%;
   display: flex;
   align-items: center;
-`,_t=dt.div`
+`,Ot=dt.div`
   display: flex;
   align-items: center;
   justify-content: center;
   height: 100%;
   width: 40px;
-`,Nt=dt.div`
+`,St=dt.div`
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
-  padding: ${bt};
+  padding: ${xt};
   width: ${e=>e.hasLeftAdornment?"calc(100% - 80px)":"calc(100% - 40px)"};
-`,Ot=dt.div`
+`,Ct=dt.div`
   background-color: #ffffff;
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
   left: 0;
@@ -51,51 +71,51 @@ import*as e from"react";import t,{forwardRef as r,useContext as n,useEffect as o
   z-index: 100;
   margin: 0px;
   height: ${"330px"};
-  width: ${xt};
-`,St=dt.div`
+  width: ${kt};
+`,At=dt.div`
   height: 35px;
-  padding: ${bt};
-  border-bottom: ${Et};
-`,Ct=dt.div`
+  padding: ${xt};
+  border-bottom: ${wt};
+`,Pt=dt.div`
   height: 35px;
-  padding: ${bt};
+  padding: ${xt};
   display: flex;
   align-items: center;
-  border-bottom: ${Et};
+  border-bottom: ${wt};
   margin-bottom: 10px;
-`,At=dt.div`
+`,Tt=dt.div`
   overflow: auto;
   height: calc(100% - 140px);
-  padding: ${bt};
-`,Pt=dt.div`
-  border-top: ${Et};
+  padding: ${xt};
+`,$t=dt.div`
+  border-top: ${wt};
   margin-top: 10px;
   height: 50px;
-  padding: ${bt};
+  padding: ${xt};
   display: flex;
   align-items: center;
   justify-content: space-around;
-`,Tt=dt.div`
+`,Dt=dt.div`
   height: 28px;
   width: 100%;
   display: flex;
   align-items: center;
-`,$t=dt.div`
+`,Rt=dt.div`
   display: flex;
   align-items: center;
   justify-content: center;
   height: 100%;
   width: 40px;
-`,Dt=dt.div`
+`;dt.div`
   cursor: pointer;
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
   width: calc(100% - 90px);
   padding: 0px 5px;
-`;dt.div`
+`,dt.div`
   cursor: pointer;
   text-align: center;
   width: 50px;
   color: ${e=>e.theme.colors.primary?e.theme.colors.primary:"black"};
-`;const Rt=!1;function Lt({popoverRef:e,closePopover:r,colors:n,dataProvider:o,locale:a,onComplete:i,value:s}){const[c]=t.useState(""),[l,u]=t.useState([]),[d,p]=t.useState([]);t.useEffect((()=>{u(vt(o,s))}),[o,s]),t.useEffect((()=>{p(l.filter((e=>{const t=String(e.label).toLowerCase(),r=String(c).toLowerCase();return t.includes(r)})))}),[c,l]);const f=t.useMemo((()=>!!Boolean(l.length)&&Boolean(l.length===l.filter((e=>e.isSelected)).length)),[l]),m=e=>{u(gt(l,e))},h=t.useMemo((()=>n&&n.primary?n.primary:"auto"),[n]);return t.createElement(Ot,{ref:e},t.createElement(St,null),t.createElement(Ct,null,t.createElement($t,null,t.createElement("input",{type:"checkbox",style:{accentColor:h},checked:f,onChange:()=>{u(yt(l,!f))}})),t.createElement(Dt,null,a&&a.selectAll?a.selectAll:mt.selectAll)),t.createElement(At,null,d.map((e=>t.createElement(Tt,{key:e.value},t.createElement($t,null,t.createElement("input",{type:"checkbox",style:{accentColor:h},checked:e.isSelected,onChange:()=>{m(e.value)}})),t.createElement(Dt,{onClick:()=>{m(e.value)}},e.label),Rt)))),t.createElement(Pt,null,t.createElement(ft,{clickHandler:r,text:a&&a.cancel?a.cancel:mt.cancel}),t.createElement(ft,{clickHandler:()=>{i(d.filter((e=>e.isSelected))),r()},text:a&&a.submit?a.submit:mt.submit})))}function Vt({colors:e,dataProvider:r=[],leftAdornment:n=null,locale:a,onComplete:i=(()=>null),rightAdornment:s=null,value:c=[]}){const l=t.useRef(null),[u,d]=t.useState(!1),p=t.useCallback((()=>d(!1)),[]);var f,m;o((()=>{let e=!1,t=!1;const r=r=>{!e&&t&&f.current&&!f.current.contains(r.target)&&m(r)},n=r=>{t=f.current,e=f.current&&f.current.contains(r.target)};return document.addEventListener("mousedown",n),document.addEventListener("touchstart",n),document.addEventListener("click",r),()=>{document.removeEventListener("mousedown",n),document.removeEventListener("touchstart",n),document.removeEventListener("click",r)}}),[f=l,m=p]);const h=t.useMemo((()=>n?t.createElement(_t,null,n):null),[n]),v=t.useMemo((()=>Boolean(c.length)?c.map((e=>e.label)).join(", ").toString():a&&a.placeHolder?a.placeHolder:mt.placeHolder),[c,a]),g=t.useMemo((()=>s?t.createElement(_t,null,s):t.createElement(_t,null,"R")),[s]),y=t.useMemo((()=>u?t.createElement(Lt,{popoverRef:l,closePopover:p,colors:e,dataProvider:r,locale:a||{},onComplete:i,value:c}):t.createElement(t.Fragment,null)),[u,l,p,e,r,a,i,c]),b=t.useMemo((()=>({colors:{primary:e&&e.primary?e.primary:"unset"}})),[e]);return t.createElement(Ze,{theme:b},t.createElement(wt,null,t.createElement(kt,{onClick:()=>{d(!0)}},h,t.createElement(Nt,{hasLeftAdornment:Boolean(n)},v),g),y))}export{Vt as ComboBox};
+`;const Lt=!1;function Vt({popoverRef:e,closePopover:r,colors:n,dataProvider:o,locale:a,onComplete:i,value:s}){const[c]=t.useState(""),[l,u]=t.useState([]),[d,p]=t.useState([]);t.useEffect((()=>{u(yt(o,s))}),[o,s]),t.useEffect((()=>{p(l.filter((e=>{const t=String(e.label).toLowerCase(),r=String(c).toLowerCase();return t.includes(r)})))}),[c,l]);const f=t.useMemo((()=>!!Boolean(l.length)&&Boolean(l.length===l.filter((e=>e.isSelected)).length)),[l]),m=e=>{u(bt(l,e))},h=()=>{u(Et(l,!f))},v=t.useMemo((()=>n&&n.primary?n.primary:"auto"),[n]);return t.createElement(Ct,{ref:e},t.createElement(At,null),t.createElement(Pt,null,t.createElement(Rt,null,t.createElement("input",{type:"checkbox",style:{accentColor:v},checked:f,onChange:h})),t.createElement(ht,{clickHandler:h,text:a&&a.selectAll?a.selectAll:vt.selectAll})),t.createElement(Tt,null,d.map((e=>t.createElement(Dt,{key:e.value},t.createElement(Rt,null,t.createElement("input",{type:"checkbox",style:{accentColor:v},checked:e.isSelected,onChange:()=>{m(e.value)}})),t.createElement(ht,{clickHandler:()=>{m(e.value)},text:e.label}),Lt)))),t.createElement($t,null,t.createElement(mt,{clickHandler:r,text:a&&a.cancel?a.cancel:vt.cancel}),t.createElement(mt,{clickHandler:()=>{i(d.filter((e=>e.isSelected))),r()},text:a&&a.submit?a.submit:vt.submit})))}function jt({colors:e,dataProvider:r=[],leftAdornment:n=null,locale:a,onComplete:i=(()=>null),rightAdornment:s=null,value:c=[]}){const l=t.useRef(null),[u,d]=t.useState(!1),p=t.useCallback((()=>d(!1)),[]);var f,m;o((()=>{let e=!1,t=!1;const r=r=>{!e&&t&&f.current&&!f.current.contains(r.target)&&m(r)},n=r=>{t=f.current,e=f.current&&f.current.contains(r.target)};return document.addEventListener("mousedown",n),document.addEventListener("touchstart",n),document.addEventListener("click",r),()=>{document.removeEventListener("mousedown",n),document.removeEventListener("touchstart",n),document.removeEventListener("click",r)}}),[f=l,m=p]);const h=t.useMemo((()=>n?t.createElement(Ot,null,n):null),[n]),v=t.useMemo((()=>Boolean(c.length)?c.map((e=>e.label)).join(", ").toString():a&&a.placeHolder?a.placeHolder:vt.placeHolder),[c,a]),g=t.useMemo((()=>s?t.createElement(Ot,null,s):t.createElement(Ot,null,"R")),[s]),y=t.useMemo((()=>u?t.createElement(Vt,{popoverRef:l,closePopover:p,colors:e,dataProvider:r,locale:a||{},onComplete:i,value:c}):t.createElement(t.Fragment,null)),[u,l,p,e,r,a,i,c]),b=t.useMemo((()=>({colors:{primary:e&&e.primary?e.primary:"unset"}})),[e]);return t.createElement(Ze,{theme:b},t.createElement(_t,null,t.createElement(Nt,{onClick:()=>{d(!0)}},h,t.createElement(St,{hasLeftAdornment:Boolean(n)},v),g),y))}export{jt as ComboBox};

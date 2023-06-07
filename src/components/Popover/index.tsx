@@ -1,5 +1,5 @@
 import React from 'react';
-import CustomButton from '../CustomButton';
+import { ActionButton, TextButton } from '../CustomButton';
 import { defaultLocale } from 'src/constants';
 import { popoverType } from '../../types/popover';
 import { comboBoxSelectedItemsType } from '../../types/combobox';
@@ -14,7 +14,6 @@ import {
 import {
   ButtonsContainer,
   CheckboxContainer,
-  LabelContainer,
   ListContainerContainer,
   OnlyLabelContainer,
   PopoverContainer,
@@ -104,11 +103,14 @@ export default function Popover({
             onChange={selectAllHandler}
           />
         </CheckboxContainer>
-        <LabelContainer>
-          {locale && locale.selectAll
-            ? locale.selectAll
-            : defaultLocale.selectAll}
-        </LabelContainer>
+        <TextButton
+          clickHandler={selectAllHandler}
+          text={
+            locale && locale.selectAll
+              ? locale.selectAll
+              : defaultLocale.selectAll
+          }
+        />
       </SelectAllContainer>
       <ListContainerContainer>
         {filteredOptions.map((dataItem) => {
@@ -124,13 +126,12 @@ export default function Popover({
                   }}
                 />
               </CheckboxContainer>
-              <LabelContainer
-                onClick={() => {
+              <TextButton
+                clickHandler={() => {
                   onStateChange(dataItem.value);
                 }}
-              >
-                {dataItem.label}
-              </LabelContainer>
+                text={dataItem.label}
+              />
               {isOnlyRequired && (
                 <OnlyLabelContainer
                   onClick={() => {
@@ -145,11 +146,11 @@ export default function Popover({
         })}
       </ListContainerContainer>
       <ButtonsContainer>
-        <CustomButton
+        <ActionButton
           clickHandler={closePopover}
           text={locale && locale.cancel ? locale.cancel : defaultLocale.cancel}
         />
-        <CustomButton
+        <ActionButton
           clickHandler={completeHandler}
           text={locale && locale.submit ? locale.submit : defaultLocale.submit}
         />
