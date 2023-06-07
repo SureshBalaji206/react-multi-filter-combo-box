@@ -63,7 +63,7 @@ export default function Popover({
   const isAllSelected = React.useMemo(() => {
     return Boolean(generatedOptions.length)
       ? Boolean(
-          generatedOptions.length ===
+          generatedOptions.filter((option) => !option.isDisabled).length ===
             generatedOptions.filter((option) => option.isSelected).length,
         )
       : false;
