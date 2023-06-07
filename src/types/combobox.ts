@@ -27,11 +27,11 @@ export interface comboBoxSelectedItemsType {
 }
 
 export interface comboBoxType {
-  colors: colorsType;
+  colors?: colorsType;
   dataProvider: comboBoxDataProviderType[];
   leftAdornment?: ReactNode;
   locale?: localeStringType;
-  onComplete: (value: comboBoxSelectedItemsType[]) => void;
+  onComplete?: (value: comboBoxSelectedItemsType[]) => void;
   rightAdornment?: ReactNode;
-  value: comboBoxSelectedItemsType[];
+  value?: comboBoxSelectedItemsType[];
 }

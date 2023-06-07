@@ -46,6 +46,8 @@
   font-size: 0.875rem;
   width: ${kt};
   position: relative;
+  font-family: system-ui, -apple-system, system-ui, 'Helvetica Neue', Helvetica,
+    Arial, sans-serif;
 `,Nt=dt.div`
   height: 35px;
   width: 100%;

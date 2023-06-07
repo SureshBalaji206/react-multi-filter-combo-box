@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import { ShowSelectedItemsContainerType } from 'src/types/combobox';
+import { ShowSelectedItemsContainerType } from '../../types/combobox';
 
 export const global_container_padding = '0px 10px';
 export const global_border_style = '1px solid lightgray';
@@ -10,6 +10,8 @@ export const RootContainer = styled.div`
   font-size: 0.875rem;
   width: ${root_container_width};
   position: relative;
+  font-family: system-ui, -apple-system, system-ui, 'Helvetica Neue', Helvetica,
+    Arial, sans-serif;
 `;
 
 export const DisplayContainer = styled.div`
