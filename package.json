@@ -1,6 +1,6 @@
 {
   "name": "@imsuresh206/testing",
-  "version": "62.31.0",
+  "version": "62.32.0",
   "description": "A Select control built with and for ReactJS",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
@@ -12,7 +12,9 @@
     "url": "git+https://github.com/SureshBalaji206/react-multi-filter-combo-box.git"
   },
   "keywords": [],
-  "author": "imsuresh206",
+  "author": {
+    "name": "imsuresh206"
+  },
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/SureshBalaji206/react-multi-filter-combo-box.git/issues"
@@ -40,6 +42,7 @@
     "@typescript-eslint/eslint-plugin": "^5.59.6",
     "@typescript-eslint/parser": "^5.59.6",
     "babel-loader": "^8.2.2",
+    "chromatic": "^6.18.0",
     "eslint": "^8.40.0",
     "eslint-config-prettier": "^8.8.0",
     "eslint-import-resolver-typescript": "^3.5.5",
@@ -82,10 +85,13 @@
     "prettierx:all": "prettier --write src/**/*{.ts,.tsx}",
     "test": "echo \"Error: no test specified\" && exit 1",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "chromatic": "npx chromatic --project-token=chpt_1479936479a8ef0"
   },
   "peerDependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
-  }
+  },
+  "readme": "ERROR: No README data found!",
+  "_id": "@imsuresh206/testing@62.31.0"
 }
