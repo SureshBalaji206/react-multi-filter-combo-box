@@ -4,7 +4,7 @@ import { ShowSelectedItemsContainerType } from 'src/types/combobox';
 export const global_container_padding = '0px 10px';
 export const global_border_style = '1px solid lightgray';
 export const root_container_height = '330px';
-export const root_container_width = '280px';
+export const root_container_width = '240px';
 
 export const RootContainer = styled.div`
   font-size: 0.875rem;
