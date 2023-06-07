@@ -5,12 +5,14 @@ export interface ShowSelectedItemsContainerType {
 }
 
 export interface comboBoxDataProviderType {
+  isDisabled?: boolean;
+  isSelected?: boolean;
   label: string;
   value: string;
-  isSelected?: boolean;
 }
 
 export interface comboBoxSelectedItemsType {
+  isDisabled?: boolean;
   isSelected: boolean;
   label: string;
   value: string;

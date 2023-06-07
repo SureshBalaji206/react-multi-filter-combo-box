@@ -36,6 +36,7 @@ const dataProvider = [
     value: '8',
   },
   {
+    isDisabled: true,
     label: 'Baseball',
     value: '9',
   },
@@ -76,14 +77,18 @@ export const SimpleComboBox = ({
   selectAllText,
   submitText,
 }) => {
+  const [value, setValue] = React.useState([]);
+
   return (
     <ComboBox
       cancelText={cancelText}
       dataProvider={dataProvider}
+      onComplete={(value) => setValue(value)}
       placeHolder={placeHolder}
       primaryColor={primaryColor}
       selectAllText={selectAllText}
       submitText={submitText}
+      value={value}
     />
   );
 };

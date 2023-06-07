@@ -118,15 +118,20 @@ export default function Popover({
                 <input
                   type='checkbox'
                   style={{ accentColor: checkBoxThemeColor }}
+                  disabled={Boolean(dataItem.isDisabled)}
                   checked={dataItem.isSelected}
                   onChange={() => {
-                    onStateChange(dataItem.value);
+                    if (!Boolean(dataItem.isDisabled)) {
+                      onStateChange(dataItem.value);
+                    }
                   }}
                 />
               </CheckboxContainer>
               <TextButton
                 clickHandler={() => {
-                  onStateChange(dataItem.value);
+                  if (!Boolean(dataItem.isDisabled)) {
+                    onStateChange(dataItem.value);
+                  }
                 }}
                 text={dataItem.label}
               />

@@ -52,6 +52,7 @@ export const generateOptions = (
       return {
         label: item.label,
         value: item.value,
+        isDisabled: item.isDisabled,
         isSelected: findIsSelected(selectedValues, item),
       };
     });
@@ -91,6 +92,9 @@ export const performSelectAllChange = (
   stateToSelect: boolean,
 ) => {
   return dataProvider.map((option) => {
-    return { ...option, isSelected: stateToSelect };
+    return {
+      ...option,
+      isSelected: Boolean(option.isDisabled) ? false : stateToSelect,
+    };
   });
 };
