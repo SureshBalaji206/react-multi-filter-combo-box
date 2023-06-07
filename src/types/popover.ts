@@ -1,18 +1,18 @@
 import { RefObject } from 'react';
 
 import {
-  colorsType,
   comboBoxDataProviderType,
   comboBoxSelectedItemsType,
-  localeStringType,
 } from './combobox';
 
 export interface popoverType {
+  cancelText?: string;
   closePopover: () => void;
-  colors?: colorsType;
   dataProvider: comboBoxDataProviderType[];
-  locale: localeStringType;
   onComplete: (value: comboBoxSelectedItemsType[]) => void;
   popoverRef: RefObject<HTMLDivElement>;
+  primaryColor?: string;
+  selectAllText?: string;
+  submitText?: string;
   value: comboBoxSelectedItemsType[];
 }

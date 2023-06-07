@@ -14,12 +14,15 @@ import {
 } from './index.styled';
 
 export default function ComboBox({
-  colors,
+  cancelText = defaultLocale.cancel,
   dataProvider = [],
   leftAdornment = null,
-  locale,
   onComplete = () => null,
+  placeHolder = defaultLocale.placeHolder,
+  primaryColor = 'unset',
   rightAdornment = null,
+  selectAllText = defaultLocale.selectAll,
+  submitText = defaultLocale.submit,
   value = [],
 }: comboBoxType) {
   const popoverRef = React.useRef(null);
@@ -41,10 +44,8 @@ export default function ComboBox({
   const renderPlaceHolder = React.useMemo(() => {
     return Boolean(value.length)
       ? getSelectedItemsPlaceHolder(value)
-      : locale && locale.placeHolder
-      ? locale.placeHolder
-      : defaultLocale.placeHolder;
-  }, [value, locale]);
+      : placeHolder;
+  }, [value, placeHolder]);
 
   const renderRightAdornment = React.useMemo(() => {
     return rightAdornment ? (
@@ -58,12 +59,14 @@ export default function ComboBox({
     if (toggle) {
       return (
         <Popover
-          popoverRef={popoverRef}
+          cancelText={cancelText}
           closePopover={closePopover}
-          colors={colors}
           dataProvider={dataProvider}
-          locale={locale ? locale : {}}
           onComplete={onComplete}
+          popoverRef={popoverRef}
+          primaryColor={primaryColor}
+          selectAllText={selectAllText}
+          submitText={submitText}
           value={value}
         />
       );
@@ -73,21 +76,23 @@ export default function ComboBox({
   }, [
     toggle,
     popoverRef,
+    cancelText,
     closePopover,
-    colors,
     dataProvider,
-    locale,
+    primaryColor,
     onComplete,
+    selectAllText,
+    submitText,
     value,
   ]);
 
   const theme = React.useMemo(() => {
     return {
       colors: {
-        primary: colors && colors.primary ? colors.primary : 'unset',
+        primary: primaryColor,
       },
     };
-  }, [colors]);
+  }, [primaryColor]);
 
   return (
     <ThemeProvider theme={theme}>

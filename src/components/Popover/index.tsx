@@ -25,12 +25,14 @@ import {
 const isOnlyRequired = false;
 
 export default function Popover({
-  popoverRef,
+  cancelText,
   closePopover,
-  colors,
   dataProvider,
-  locale,
   onComplete,
+  popoverRef,
+  primaryColor,
+  selectAllText,
+  submitText,
   value,
 }: popoverType) {
   const [query] = React.useState<string>('');
@@ -87,8 +89,8 @@ export default function Popover({
   };
 
   const checkBoxThemeColor = React.useMemo(
-    () => (colors && colors.primary ? colors.primary : 'auto'),
-    [colors],
+    () => (primaryColor ? primaryColor : 'auto'),
+    [primaryColor],
   );
 
   return (
@@ -105,11 +107,7 @@ export default function Popover({
         </CheckboxContainer>
         <TextButton
           clickHandler={selectAllHandler}
-          text={
-            locale && locale.selectAll
-              ? locale.selectAll
-              : defaultLocale.selectAll
-          }
+          text={selectAllText ? selectAllText : ''}
         />
       </SelectAllContainer>
       <ListContainerContainer>
@@ -138,7 +136,7 @@ export default function Popover({
                     onOnlyChange(dataItem.value);
                   }}
                 >
-                  {locale && locale.only ? locale.only : defaultLocale.only}
+                  {defaultLocale.only}
                 </OnlyLabelContainer>
               )}
             </RowContainer>
@@ -148,11 +146,11 @@ export default function Popover({
       <ButtonsContainer>
         <ActionButton
           clickHandler={closePopover}
-          text={locale && locale.cancel ? locale.cancel : defaultLocale.cancel}
+          text={cancelText ? cancelText : ''}
         />
         <ActionButton
           clickHandler={completeHandler}
-          text={locale && locale.submit ? locale.submit : defaultLocale.submit}
+          text={submitText ? submitText : ''}
         />
       </ButtonsContainer>
     </PopoverContainer>
