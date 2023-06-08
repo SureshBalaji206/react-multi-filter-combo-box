@@ -1,6 +1,6 @@
 import React from 'react';
-import { ActionButtonContainer, TextButtonContainer } from './index.styled';
 import { CustomButtonPropsType } from '../../types/button';
+import { ActionButtonContainer, TextButtonContainer } from './index.styled';
 
 export function ActionButton({ clickHandler, text }: CustomButtonPropsType) {
   return (

@@ -1,9 +1,10 @@
 import React from 'react';
-import { ThemeProvider } from '@emotion/react';
 import Popover from '../Popover';
+import useClickOutside from '../../hooks/useClickOutside';
+
+import { ThemeProvider } from '@emotion/react';
 import { defaultLocale } from '../../constants';
 import { comboBoxType } from '../../types/combobox';
-import useClickOutside from '../../hooks/useClickOutside';
 import { getSelectedItemsPlaceHolder } from '../../helpers';
 
 import {
