@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import ComboBox from '../components/ComboBox';
+import { comboBoxSelectedItemsType, comboBoxType } from '../types/combobox';
 
 const dataProvider = [
   {
@@ -36,7 +37,6 @@ const dataProvider = [
     value: '8',
   },
   {
-    isDisabled: true,
     label: 'Baseball',
     value: '9',
   },
@@ -76,14 +76,14 @@ export const SimpleComboBox = ({
   primaryColor,
   selectAllText,
   submitText,
-}) => {
-  const [value, setValue] = React.useState([]);
+}: comboBoxType) => {
+  const [value, setValue] = React.useState<comboBoxSelectedItemsType[]>([]);
 
   return (
     <ComboBox
       cancelText={cancelText}
       dataProvider={dataProvider}
-      onComplete={(value) => setValue(value)}
+      onComplete={(value: comboBoxSelectedItemsType[]) => setValue(value)}
       placeHolder={placeHolder}
       primaryColor={primaryColor}
       selectAllText={selectAllText}
