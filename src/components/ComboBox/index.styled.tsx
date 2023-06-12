@@ -14,6 +14,8 @@ export const RootContainer = styled.div`
   width: ${root_container_width};
   position: relative;
   font-family: ${global_font_style};
+  background-color: #ffffff;
+  color: black;
 `;
 
 export const DisplayContainer = styled.div`
