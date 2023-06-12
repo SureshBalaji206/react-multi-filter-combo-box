@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from '@emotion/styled';
-import { CustomInputPropsType } from '../../types/utils';
-import { global_font_style } from '../ComboBox/index.styled';
+import { CustomInputPropsType } from '../../../types/utils';
+import { global_font_style } from '../../ComboBox/index.styled';
 
 const Component: React.FunctionComponent<CustomInputPropsType> = ({
   className,

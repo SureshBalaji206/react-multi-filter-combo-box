@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
-import { ThemeProviderPropsType } from '../../types/utils';
-import { global_font_style } from '../ComboBox/index.styled';
+import { ThemeProviderPropsType } from '../../../types/utils';
+import { global_font_style } from '../../ComboBox/index.styled';
 
 export const ActionButtonContainer = styled.button<ThemeProviderPropsType>`
   align-items: center;
@@ -10,7 +10,6 @@ export const ActionButtonContainer = styled.button<ThemeProviderPropsType>`
   box-sizing: border-box;
   cursor: pointer;
   display: inline-flex;
-  font-size: 0.875rem;
   justify-content: center;
   line-height: 1.25;
   margin: 0;
@@ -32,7 +31,6 @@ export const TextButtonContainer = styled.button`
   background-color: #ffffff;
   border: none;
   cursor: pointer;
-  font-size: 0.875rem;
   line-height: 1.25;
   margin: 0;
   padding: 0px calc(1.5rem - 1px);

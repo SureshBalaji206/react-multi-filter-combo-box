@@ -1,8 +1,8 @@
 import React from 'react';
-import { CustomInput } from '../Custom/Input';
 import { defaultLocale } from '../../constants';
 import { popoverType } from '../../types/popover';
-import { ActionButton, TextButton } from '../CustomButton';
+import { CustomInput } from '../Custom/Input/Input';
+import { ActionButton, TextButton } from '../Custom/Button';
 import { comboBoxSelectedItemsType } from '../../types/combobox';
 
 import {
