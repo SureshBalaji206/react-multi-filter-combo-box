@@ -11,4 +11,10 @@ interface ThemePropsType {
 export interface ThemeProviderPropsType {
     theme?: ThemePropsType;
 }
+export interface CustomInputPropsType {
+    className?: string;
+    changeHandler: (value: string) => void;
+    placeHolder: string;
+    value: string;
+}
 export {};
