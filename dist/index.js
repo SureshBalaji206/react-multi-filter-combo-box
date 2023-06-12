@@ -3,6 +3,8 @@
   width: ${xt};
   position: relative;
   font-family: ${bt};
+  background-color: #ffffff;
+  color: black;
 `,wt=vt.div`
   height: 35px;
   width: 100%;

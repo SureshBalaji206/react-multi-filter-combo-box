@@ -3,6 +3,8 @@ import*as e from"react";import t,{forwardRef as r,useContext as n,useEffect as o
   width: ${xt};
   position: relative;
   font-family: ${bt};
+  background-color: #ffffff;
+  color: black;
 `,wt=vt.div`
   height: 35px;
   width: 100%;
