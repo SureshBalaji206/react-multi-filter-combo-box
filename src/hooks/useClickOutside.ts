@@ -1,33 +1,28 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
-import { useEffect } from 'react';
+import { useEffect, RefObject } from 'react';
 
-const useClickOutside = (ref: any, handler: any) => {
+type Event = MouseEvent | TouchEvent;
+
+export const useClickOutside = <T extends HTMLElement = HTMLElement>(
+  elementRef: RefObject<T>,
+  outsideClickHandler: (event: Event) => void,
+) => {
   useEffect(() => {
-    let startedInside = false;
-    let startedWhenMounted = false;
+    const listener = (event: Event) => {
+      const el = elementRef?.current;
 
-    const listener = (event: any) => {
-      if (startedInside || !startedWhenMounted) return;
-      if (!ref.current || ref.current.contains(event.target)) return;
+      if (!el || el.contains((event?.target as Node) || null)) {
+        return;
+      }
 
-      handler(event);
+      outsideClickHandler(event);
     };
 
-    const validateEventStart = (event: any) => {
-      startedWhenMounted = ref.current;
-      startedInside = ref.current && ref.current.contains(event.target);
-    };
-
-    document.addEventListener('mousedown', validateEventStart);
-    document.addEventListener('touchstart', validateEventStart);
-    document.addEventListener('click', listener);
+    document.addEventListener('mousedown', listener);
+    document.addEventListener('touchstart', listener);
 
     return () => {
-      document.removeEventListener('mousedown', validateEventStart);
-      document.removeEventListener('touchstart', validateEventStart);
-      document.removeEventListener('click', listener);
+      document.removeEventListener('mousedown', listener);
+      document.removeEventListener('touchstart', listener);
     };
-  }, [ref, handler]);
+  }, [elementRef, outsideClickHandler]);
 };
-
-export default useClickOutside;

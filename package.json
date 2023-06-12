@@ -1,6 +1,6 @@
 {
   "name": "@imsuresh206/testing",
-  "version": "62.40.0",
+  "version": "62.41.0",
   "description": "A Select control built with and for ReactJS",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
@@ -93,5 +93,5 @@
     "react-dom": "^18.2.0"
   },
   "readme": "ERROR: No README data found!",
-  "_id": "@imsuresh206/testing@62.31.0"
+  "_id": "@imsuresh206/testing@62.41.0"
 }

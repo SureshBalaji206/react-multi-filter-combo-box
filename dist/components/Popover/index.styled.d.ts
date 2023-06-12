@@ -1,4 +1,5 @@
 /// <reference types="react" />
+import { ThemeProviderPropsType } from '../../types/utils';
 export declare const PopoverContainer: import("@emotion/styled").StyledComponent<{
     theme?: import("@emotion/react").Theme | undefined;
     as?: import("react").ElementType<any> | undefined;
@@ -34,4 +35,4 @@ export declare const LabelContainer: import("@emotion/styled").StyledComponent<{
 export declare const OnlyLabelContainer: import("@emotion/styled").StyledComponent<{
     theme?: import("@emotion/react").Theme | undefined;
     as?: import("react").ElementType<any> | undefined;
-}, import("react").DetailedHTMLProps<import("react").HTMLAttributes<HTMLDivElement>, HTMLDivElement>, {}>;
+} & ThemeProviderPropsType, import("react").DetailedHTMLProps<import("react").HTMLAttributes<HTMLDivElement>, HTMLDivElement>, {}>;

@@ -1,18 +1,14 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import styled from '@emotion/styled';
+import { ThemeProviderPropsType } from '../../types/utils';
 
-export const ActionButtonContainer = styled.button`
+export const ActionButtonContainer = styled.button<ThemeProviderPropsType>`
   align-items: center;
   background-color: #ffffff;
   border: none;
   box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;
   box-sizing: border-box;
-  color: ${(props: any) =>
-    props.theme.colors.primary ? props.theme.colors.primary : `black`};
   cursor: pointer;
   display: inline-flex;
-  font-family: system-ui, -apple-system, system-ui, 'Helvetica Neue', Helvetica,
-    Arial, sans-serif;
   font-size: 0.875rem;
   justify-content: center;
   line-height: 1.25;
@@ -26,14 +22,16 @@ export const ActionButtonContainer = styled.button`
   touch-action: manipulation;
   vertical-align: baseline;
   width: auto;
+  color: ${({ theme }) =>
+    theme.colors.primary ? theme.colors.primary : 'black'};
+  font-family: system-ui, -apple-system, system-ui, 'Helvetica Neue', Helvetica,
+    Arial, sans-serif;
 `;
 
 export const TextButtonContainer = styled.button`
   background-color: #ffffff;
   border: none;
   cursor: pointer;
-  font-family: system-ui, -apple-system, system-ui, 'Helvetica Neue', Helvetica,
-    Arial, sans-serif;
   font-size: 0.875rem;
   line-height: 1.25;
   margin: 0;
@@ -48,4 +46,6 @@ export const TextButtonContainer = styled.button`
   overflow: hidden;
   width: calc(100% - 40px);
   padding: 0px 5px;
+  font-family: system-ui, -apple-system, system-ui, 'Helvetica Neue', Helvetica,
+    Arial, sans-serif;
 `;
