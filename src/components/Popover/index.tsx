@@ -1,4 +1,5 @@
 import React from 'react';
+import { CustomInput } from '../Custom/Input';
 import { defaultLocale } from '../../constants';
 import { popoverType } from '../../types/popover';
 import { ActionButton, TextButton } from '../CustomButton';
@@ -35,7 +36,7 @@ export default function Popover({
   submitText,
   value,
 }: popoverType) {
-  const [query] = React.useState<string>('');
+  const [query, setQuery] = React.useState<string>('');
 
   const [generatedOptions, setGeneratedOptions] = React.useState<
     comboBoxSelectedItemsType[]
@@ -95,7 +96,13 @@ export default function Popover({
 
   return (
     <PopoverContainer ref={popoverRef}>
-      <SearchContainer />
+      <SearchContainer>
+        <CustomInput
+          changeHandler={(value) => setQuery(value)}
+          placeHolder='search...'
+          value={query}
+        />
+      </SearchContainer>
       <SelectAllContainer>
         <CheckboxContainer>
           <input

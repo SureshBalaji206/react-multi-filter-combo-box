@@ -20,6 +20,8 @@ export const PopoverContainer = styled.div`
 `;
 
 export const SearchContainer = styled.div`
+  display: flex;
+  align-items: center;
   height: 35px;
   padding: ${global_container_padding};
   border-bottom: ${global_border_style};
