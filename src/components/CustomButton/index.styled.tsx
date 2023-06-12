@@ -1,5 +1,6 @@
 import styled from '@emotion/styled';
 import { ThemeProviderPropsType } from '../../types/utils';
+import { global_font_style } from '../ComboBox/index.styled';
 
 export const ActionButtonContainer = styled.button<ThemeProviderPropsType>`
   align-items: center;
@@ -22,10 +23,9 @@ export const ActionButtonContainer = styled.button<ThemeProviderPropsType>`
   touch-action: manipulation;
   vertical-align: baseline;
   width: auto;
+  font-family: ${global_font_style};
   color: ${({ theme }) =>
     theme.colors.primary ? theme.colors.primary : 'black'};
-  font-family: system-ui, -apple-system, system-ui, 'Helvetica Neue', Helvetica,
-    Arial, sans-serif;
 `;
 
 export const TextButtonContainer = styled.button`
@@ -46,6 +46,5 @@ export const TextButtonContainer = styled.button`
   overflow: hidden;
   width: calc(100% - 40px);
   padding: 0px 5px;
-  font-family: system-ui, -apple-system, system-ui, 'Helvetica Neue', Helvetica,
-    Arial, sans-serif;
+  font-family: ${global_font_style};
 `;

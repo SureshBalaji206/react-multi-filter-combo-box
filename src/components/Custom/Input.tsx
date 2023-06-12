@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from '@emotion/styled';
 import { CustomInputPropsType } from 'src/types/utils';
+import { global_font_style } from '../ComboBox/index.styled';
 
 const Component: React.FunctionComponent<CustomInputPropsType> = ({
   className,
@@ -23,9 +24,7 @@ export const CustomInput = styled(Component)`
   border: none;
   color: gray;
   height: 30px;
-  font-family: system-ui, -apple-system, system-ui, 'Helvetica Neue', Helvetica,
-    Arial, sans-serif;
-
+  font-family: ${global_font_style};
   &:focus {
     border: none;
     outline: none;
