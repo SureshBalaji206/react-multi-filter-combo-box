@@ -23,8 +23,10 @@ const Component: React.FunctionComponent<CustomInputPropsType> = ({
 export const CustomInput = styled(Component)`
   border: none;
   color: gray;
-  height: 30px;
   font-family: ${global_font_style};
+  height: 30px;
+  padding-left: 5px;
+  width: 100%;
   &:focus {
     border: none;
     outline: none;

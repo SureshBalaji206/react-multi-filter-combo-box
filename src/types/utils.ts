@@ -21,3 +21,9 @@ export interface CustomInputPropsType {
   placeHolder: string;
   value: string;
 }
+
+export interface IconProps {
+  fill?: string;
+  height?: number | string;
+  width?: number | string;
+}

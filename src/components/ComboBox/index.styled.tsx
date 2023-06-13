@@ -10,24 +10,25 @@ export const root_container_height = '330px';
 export const root_container_width = '240px';
 
 export const RootContainer = styled.div`
-  font-size: 0.875rem;
-  width: ${root_container_width};
-  position: relative;
-  font-family: ${global_font_style};
   background-color: #ffffff;
   color: black;
+  font-size: 0.875rem;
+  font-family: ${global_font_style};
+  position: relative;
+  width: ${root_container_width};
 `;
 
 export const DisplayContainer = styled.div`
+  align-items: center;
+  border: ${global_border_style};
+  display: flex;
   height: 35px;
   width: 100%;
-  display: flex;
-  align-items: center;
 `;
 
 export const IconContainer = styled.div`
-  display: flex;
   align-items: center;
+  display: flex;
   justify-content: center;
   height: 100%;
   width: 40px;

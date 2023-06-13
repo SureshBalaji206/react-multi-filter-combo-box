@@ -15,6 +15,7 @@ export const PopoverContainer = styled.div`
   position: absolute;
   z-index: 100;
   margin: 0px;
+  margin-top: 5px;
   height: ${root_container_height};
   width: ${root_container_width};
 `;

@@ -1,7 +1,10 @@
 import React from 'react';
+import SearchIcon from '../../Icons/Search';
+
 import { defaultLocale } from '../../constants';
 import { popoverType } from '../../types/popover';
 import { CustomInput } from '../Custom/Input/Input';
+import { IconContainer } from '../ComboBox/index.styled';
 import { ActionButton, TextButton } from '../Custom/Button';
 import { comboBoxSelectedItemsType } from '../../types/combobox';
 
@@ -97,6 +100,11 @@ export default function Popover({
   return (
     <PopoverContainer ref={popoverRef}>
       <SearchContainer>
+        <CheckboxContainer>
+          <IconContainer>
+            <SearchIcon />
+          </IconContainer>
+        </CheckboxContainer>
         <CustomInput
           changeHandler={(value) => setQuery(value)}
           placeHolder='search...'
