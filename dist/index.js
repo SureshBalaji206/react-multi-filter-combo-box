@@ -81,7 +81,6 @@
   position: absolute;
   z-index: 100;
   margin: 0px;
-  margin-top: 5px;
   height: ${"330px"};
   width: ${Et};
 `,Mt=gt.div`
