@@ -68,6 +68,10 @@ const dataProvider = [
     label: 'Hockey',
     value: '16',
   },
+  {
+    label: 'High Jump',
+    value: '17',
+  },
 ];
 
 export const SimpleComboBox = ({
