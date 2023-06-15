@@ -27,5 +27,12 @@ jobs:
       - name: Build bundle
         run: npm run rollup
 
+      - name: Login to npm
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
+        run: npm login --registry=https://registry.npmjs.org/
+
       - name: Publish to npm
-        run: npm publish --access=public
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
+        run: npm publish --access public
