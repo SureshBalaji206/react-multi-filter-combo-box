@@ -12,6 +12,8 @@ Install react-combo-box with npm
 
 ## Usage/Examples
 
+## Simple Example
+
 ```javascript
 import React from 'react';
 import { ComboBox } from '@imsuresh206/testing';
@@ -26,6 +28,40 @@ const dataProvider = [
 
 export default function App() {
   const [selectedItems, setSelectedItems] = React.useState([]);
+
+  return (
+    <div>
+      <ComboBox
+        dataProvider={dataProvider}
+        value={selectedItems}
+        onComplete={(value) => {
+          setSelectedItems(value);
+        }}
+      />
+    </div>
+  );
+}
+```
+
+## Select items by default
+
+```javascript
+import React from 'react';
+import { ComboBox } from '@imsuresh206/testing';
+
+const dataProvider = [
+  { label: 'Apple', value: 111 },
+  { label: 'Pineapple', value: 112 },
+  { label: 'Litchi', value: 113 },
+  { label: 'Orange', value: 114 },
+  { label: 'Banana', value: 115 },
+];
+
+export default function App() {
+  const [selectedItems, setSelectedItems] = React.useState([
+    { label: 'Apple', value: 111 },
+    { label: 'Pineapple', value: 112 },
+  ]);
 
   return (
     <div>

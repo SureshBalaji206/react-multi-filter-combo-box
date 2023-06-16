@@ -72,6 +72,10 @@ const dataProvider = [
     label: 'High Jump',
     value: '17',
   },
+  {
+    label: 'Sky Diving',
+    value: '18',
+  },
 ];
 
 export const SimpleComboBox = ({
