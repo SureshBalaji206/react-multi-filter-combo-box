@@ -7,7 +7,7 @@ react-combo-box is a select control component which helps to Narrow down your re
 Install react-combo-box with npm
 
 ```npm
-  npm iinstall @imsuresh206/testing
+  npm install @imsuresh206/testing
 ```
 
 ## Usage/Examples
