@@ -94,11 +94,11 @@ Common props you may want to specify include:
 
 ## Demo
 
-https://6480578bad52defd0eefe6ae-pnyqdsdbom.chromatic.com/?path=/story/combo-box--simple
+https://6480578bad52defd0eefe6ae-atroopthpc.chromatic.com/?path=/story/combo-box--simple
 
 ## Codesandbox
 
-https://codesandbox.io/s/falling-glitter-pfjxqt
+https://codesandbox.io/s/sparkling-breeze-4czv7l
 
 ## Features
 
