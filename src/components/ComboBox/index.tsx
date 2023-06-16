@@ -1,5 +1,6 @@
 import React from 'react';
 import Popover from '../Popover';
+import DownArraycon from '../../Icons/DownArrow';
 
 import { ThemeProvider } from '@emotion/react';
 import { defaultLocale } from '../../constants';
@@ -52,7 +53,9 @@ export default function ComboBox({
     return rightAdornment ? (
       <IconContainer>{rightAdornment}</IconContainer>
     ) : (
-      <IconContainer>R</IconContainer>
+      <IconContainer>
+        <DownArraycon />
+      </IconContainer>
     );
   }, [rightAdornment]);
 
