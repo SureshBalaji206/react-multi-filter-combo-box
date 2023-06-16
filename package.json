@@ -1,6 +1,6 @@
 {
   "name": "@imsuresh206/testing",
-  "version": "62.57.0",
+  "version": "62.58.0",
   "description": "A Select control built with and for ReactJS",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
@@ -94,6 +94,6 @@
     "chromatic": "chromatic --exit-zero-on-changes"
   },
   "peerDependencies": {
-    "react": ">= 16.8 || 18.0.0"
+    "react": ">= 16.8"
   }
 }
