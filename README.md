@@ -124,5 +124,6 @@ Please make sure to update tests as appropriate.
 If you have any feedback, please reach out to us at suresh@softsuave.com
 
 ## License
+MIT License
 
-[MIT](https://choosealicense.com/licenses/mit/)
+Copyright (c) 2023 Suresh-SS

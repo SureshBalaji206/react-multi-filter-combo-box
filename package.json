@@ -3,7 +3,7 @@
   "version": "62.60.0",
   "description": "A Select control built with and for ReactJS",
   "author": "imsuresh206",
-  "license": "ISC",
+  "license": "MIT",
   "type": "module",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
