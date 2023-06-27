@@ -106,7 +106,6 @@ https://codesandbox.io/s/sparkling-breeze-4czv7l
 - Cross browser supported
 - Light weighted
 - Search and Filter options
-- Single and Multiple selection modes
 
 ## Contributing
 

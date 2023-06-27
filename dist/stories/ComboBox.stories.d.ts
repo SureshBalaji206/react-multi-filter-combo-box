@@ -1,4 +1,3 @@
-/// <reference types="react" />
 declare const storyConfig: {
     title: string;
     component: {
