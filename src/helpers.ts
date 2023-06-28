@@ -1,52 +1,52 @@
 import {
   comboBoxDataProviderType,
   comboBoxSelectedItemsType,
-} from './types/combobox';
+} from './types/combobox'
 
 export const getSelectedItemsPlaceHolder = (
-  selectedItems: comboBoxSelectedItemsType[],
+  selectedItems: comboBoxSelectedItemsType[]
 ) => {
   return selectedItems
     .map((selectedItem) => selectedItem.label)
     .join(', ')
-    .toString();
-};
+    .toString()
+}
 
 const sortAlphabetically = (
   element1: comboBoxDataProviderType,
-  element2: comboBoxDataProviderType,
+  element2: comboBoxDataProviderType
 ) => {
-  const element1Label = element1.label;
-  const element2Label = element2.label;
+  const element1Label = element1.label
+  const element2Label = element2.label
 
   if (element1Label < element2Label) {
-    return -1;
+    return -1
   } else if (element1Label > element2Label) {
-    return 1;
+    return 1
   } else {
-    return 0;
+    return 0
   }
-};
+}
 
 const findIsSelected = (
   selectedValues: comboBoxSelectedItemsType[],
-  item: comboBoxDataProviderType,
+  item: comboBoxDataProviderType
 ) => {
   return Boolean(
     selectedValues.find((selectedValue) => {
-      return selectedValue.value === item.value;
-    }),
-  );
-};
+      return selectedValue.value === item.value
+    })
+  )
+}
 
 export const generateOptions = (
   dataProvider: comboBoxDataProviderType[],
-  selectedValues: comboBoxSelectedItemsType[],
+  selectedValues: comboBoxSelectedItemsType[]
 ) => {
   if (dataProvider) {
     const sortedArray = dataProvider.sort((element1, element2) => {
-      return sortAlphabetically(element1, element2);
-    });
+      return sortAlphabetically(element1, element2)
+    })
 
     return sortedArray.map((item) => {
       return {
@@ -54,47 +54,47 @@ export const generateOptions = (
         value: item.value,
         isDisabled: item.isDisabled,
         isSelected: findIsSelected(selectedValues, item),
-      };
-    });
+      }
+    })
   } else {
-    return dataProvider;
+    return dataProvider
   }
-};
+}
 
 export const performStateChange = (
   dataProvider: comboBoxSelectedItemsType[],
-  identifier: string,
+  identifier: string
 ) => {
   return dataProvider.map((option) => {
     if (option.value === identifier) {
-      return { ...option, isSelected: !option.isSelected };
+      return { ...option, isSelected: !option.isSelected }
     } else {
-      return { ...option };
+      return { ...option }
     }
-  });
-};
+  })
+}
 
 export const performOnlyChange = (
   dataProvider: comboBoxSelectedItemsType[],
-  identifier: string,
+  identifier: string
 ) => {
   return dataProvider.map((option) => {
     if (option.value === identifier) {
-      return { ...option, isSelected: true };
+      return { ...option, isSelected: true }
     } else {
-      return { ...option, isSelected: false };
+      return { ...option, isSelected: false }
     }
-  });
-};
+  })
+}
 
 export const performSelectAllChange = (
   dataProvider: comboBoxSelectedItemsType[],
-  stateToSelect: boolean,
+  stateToSelect: boolean
 ) => {
   return dataProvider.map((option) => {
     return {
       ...option,
-      isSelected: Boolean(option.isDisabled) ? false : stateToSelect,
-    };
-  });
-};
+      isSelected: option.isDisabled ? false : stateToSelect,
+    }
+  })
+}

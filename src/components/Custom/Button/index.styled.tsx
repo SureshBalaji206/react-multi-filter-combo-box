@@ -1,6 +1,6 @@
-import styled from '@emotion/styled';
-import { ThemeProviderPropsType } from '../../../types/utils';
-import { global_font_style } from '../../ComboBox/index.styled';
+import styled from '@emotion/styled'
+import { ThemeProviderPropsType } from '../../../types/utils'
+import { global_font_style } from '../../ComboBox/index.styled'
 
 export const ActionButtonContainer = styled.button<ThemeProviderPropsType>`
   align-items: center;
@@ -25,7 +25,7 @@ export const ActionButtonContainer = styled.button<ThemeProviderPropsType>`
   font-family: ${global_font_style};
   color: ${({ theme }) =>
     theme.colors.primary ? theme.colors.primary : 'black'};
-`;
+`
 
 export const TextButtonContainer = styled.button`
   background-color: #ffffff;
@@ -45,4 +45,4 @@ export const TextButtonContainer = styled.button`
   width: calc(100% - 40px);
   padding: 0px 5px;
   font-family: ${global_font_style};
-`;
+`

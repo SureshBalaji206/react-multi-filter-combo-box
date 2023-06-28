@@ -1,5 +1,5 @@
-import React from 'react';
-import { IconProps } from '../types/utils';
+import React from 'react'
+import { IconProps } from '../types/utils'
 
 export default function SearchIcon({
   fill = 'gray',
@@ -22,5 +22,5 @@ export default function SearchIcon({
         ></path>
       </g>
     </svg>
-  );
+  )
 }

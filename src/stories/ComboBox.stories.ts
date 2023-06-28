@@ -1,4 +1,4 @@
-import { SimpleComboBox } from './SimpleComboBox';
+import { SimpleComboBox } from './SimpleComboBox'
 
 const storyConfig = {
   title: 'Combo Box',
@@ -7,7 +7,7 @@ const storyConfig = {
   argTypes: {
     primaryColor: { control: 'color' },
   },
-};
+}
 
 export const Simple = {
   args: {
@@ -17,6 +17,6 @@ export const Simple = {
     selectAllText: 'Select All',
     submitText: 'OK',
   },
-};
+}
 
-export default storyConfig;
+export default storyConfig

@@ -1,7 +1,7 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import ComboBox from '../components/ComboBox';
-import { comboBoxSelectedItemsType, comboBoxType } from '../types/combobox';
+import React, { useState } from 'react'
+import PropTypes from 'prop-types'
+import ComboBox from '../components/ComboBox'
+import { comboBoxSelectedItemsType, comboBoxType } from '../types/combobox'
 
 const dataProvider = [
   {
@@ -76,7 +76,7 @@ const dataProvider = [
     label: 'Sky Diving',
     value: '18',
   },
-];
+]
 
 export const SimpleComboBox = ({
   cancelText,
@@ -85,7 +85,7 @@ export const SimpleComboBox = ({
   selectAllText,
   submitText,
 }: comboBoxType) => {
-  const [value, setValue] = React.useState<comboBoxSelectedItemsType[]>([]);
+  const [value, setValue] = useState<comboBoxSelectedItemsType[]>([])
 
   return (
     <ComboBox
@@ -98,8 +98,8 @@ export const SimpleComboBox = ({
       submitText={submitText}
       value={value}
     />
-  );
-};
+  )
+}
 
 SimpleComboBox.propTypes = {
   cancelText: PropTypes.string,
@@ -107,7 +107,7 @@ SimpleComboBox.propTypes = {
   primaryColor: PropTypes.string,
   selectAllText: PropTypes.string,
   submitText: PropTypes.string,
-};
+}
 
 SimpleComboBox.defaultProps = {
   cancelText: '',
@@ -115,4 +115,4 @@ SimpleComboBox.defaultProps = {
   primaryColor: '',
   selectAllText: '',
   submitText: '',
-};
+}

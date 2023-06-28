@@ -1,13 +1,93 @@
 {
     "extends": [
+        "eslint:recommended",
         "plugin:@typescript-eslint/recommended",
-        "prettier",
-        "plugin:storybook/recommended"
-    ],
-    "plugins": [
+        "plugin:import/errors",
+        "plugin:import/warnings",
+        "plugin:import/typescript",
+        "plugin:jsx-a11y/recommended",
+        "plugin:react/recommended",
+        "plugin:react-hooks/recommended",
+        "plugin:storybook/recommended",
         "prettier"
     ],
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+        "ecmaFeatures": {
+            "jsx": true
+        },
+        "ecmaVersion": "latest",
+        "sourceType": "module"
+    },
+    "plugins": [
+        "@typescript-eslint",
+        "import",
+        "jsx-a11y",
+        "prettier",
+        "react",
+        "react-hooks",
+        "storybook"
+    ],
     "rules": {
-        "prettier/prettier": "error"
+        "import/no-named-as-default-member": "off",
+        "linebreak-style": 0,
+        "quotes": [
+            "error",
+            "single",
+            {
+                "allowTemplateLiterals": true
+            }
+        ],
+        "semi": [
+            "error",
+            "never"
+        ],
+        "@typescript-eslint/explicit-module-boundary-types": "off",
+        "react/react-in-jsx-scope": "off",
+        "@typescript-eslint/no-explicit-any": [
+            "off"
+        ],
+        "@typescript-eslint/no-unused-vars": [
+            "error",
+            {
+                "vars": "all",
+                "args": "after-used",
+                "ignoreRestSiblings": false
+            }
+        ],
+        "import/order": [
+            "error",
+            {
+                "groups": [
+                    "builtin",
+                    "external",
+                    [
+                        "internal",
+                        "sibling",
+                        "parent",
+                        "index"
+                    ],
+                    "object"
+                ]
+            }
+        ],
+        "react/jsx-filename-extension": [
+            1,
+            {
+                "extensions": [
+                    ".tsx"
+                ]
+            }
+        ],
+        "@typescript-eslint/no-var-requires": 0,
+        "react/display-name": "off"
+    },
+    "settings": {
+        "import/resolver": {
+            "typescript": {}
+        },
+        "react": {
+            "version": "detect"
+        }
     }
 }

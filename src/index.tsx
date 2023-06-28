@@ -1,3 +1,3 @@
-import ComboBox from './components/ComboBox';
+import ComboBox from './components/ComboBox'
 
-export { ComboBox };
+export { ComboBox }

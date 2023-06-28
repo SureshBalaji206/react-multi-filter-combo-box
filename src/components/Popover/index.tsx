@@ -1,19 +1,19 @@
-import React from 'react';
-import SearchIcon from '../../Icons/Search';
+import React from 'react'
+import SearchIcon from '../../Icons/Search'
 
-import { defaultLocale } from '../../constants';
-import { popoverType } from '../../types/popover';
-import { CustomInput } from '../Custom/Input/Input';
-import { IconContainer } from '../ComboBox/index.styled';
-import { ActionButton, TextButton } from '../Custom/Button';
-import { comboBoxSelectedItemsType } from '../../types/combobox';
+import { defaultLocale } from '../../constants'
+import { popoverType } from '../../types/popover'
+import { CustomInput } from '../Custom/Input/Input'
+import { IconContainer } from '../ComboBox/index.styled'
+import { ActionButton, TextButton } from '../Custom/Button'
+import { comboBoxSelectedItemsType } from '../../types/combobox'
 
 import {
   generateOptions,
   performOnlyChange,
   performSelectAllChange,
   performStateChange,
-} from '../../helpers';
+} from '../../helpers'
 
 import {
   ButtonsContainer,
@@ -24,9 +24,9 @@ import {
   RowContainer,
   SearchContainer,
   SelectAllContainer,
-} from './index.styled';
+} from './index.styled'
 
-const isOnlyRequired = false;
+const isOnlyRequired = false
 
 export default function Popover({
   cancelText,
@@ -39,63 +39,63 @@ export default function Popover({
   submitText,
   value,
 }: popoverType) {
-  const [query, setQuery] = React.useState<string>('');
+  const [query, setQuery] = React.useState<string>('')
 
   const [generatedOptions, setGeneratedOptions] = React.useState<
     comboBoxSelectedItemsType[]
-  >([]);
+  >([])
 
   const [filteredOptions, setFilteredOptions] = React.useState<
     comboBoxSelectedItemsType[]
-  >([]);
+  >([])
 
   React.useEffect(() => {
-    setGeneratedOptions(generateOptions(dataProvider, value));
-  }, [dataProvider, value]);
+    setGeneratedOptions(generateOptions(dataProvider, value))
+  }, [dataProvider, value])
 
   React.useEffect(() => {
     setFilteredOptions(
       generatedOptions.filter((option) => {
-        const labelElement = String(option.label).toLowerCase();
-        const queryElement = String(query).toLowerCase();
+        const labelElement = String(option.label).toLowerCase()
+        const queryElement = String(query).toLowerCase()
 
-        return labelElement.includes(queryElement);
-      }),
-    );
-  }, [query, generatedOptions]);
+        return labelElement.includes(queryElement)
+      })
+    )
+  }, [query, generatedOptions])
 
   const isAllSelected = React.useMemo(() => {
-    return Boolean(generatedOptions.length)
+    return generatedOptions.length
       ? Boolean(
           generatedOptions.filter((option) => !option.isDisabled).length ===
-            generatedOptions.filter((option) => option.isSelected).length,
+            generatedOptions.filter((option) => option.isSelected).length
         )
-      : false;
-  }, [generatedOptions]);
+      : false
+  }, [generatedOptions])
 
   const onStateChange = (identifier: string) => {
-    setGeneratedOptions(performStateChange(generatedOptions, identifier));
-  };
+    setGeneratedOptions(performStateChange(generatedOptions, identifier))
+  }
 
   const onOnlyChange = (identifier: string) => {
-    setGeneratedOptions(performOnlyChange(generatedOptions, identifier));
-  };
+    setGeneratedOptions(performOnlyChange(generatedOptions, identifier))
+  }
 
   const selectAllHandler = () => {
     setGeneratedOptions(
-      performSelectAllChange(generatedOptions, !isAllSelected),
-    );
-  };
+      performSelectAllChange(generatedOptions, !isAllSelected)
+    )
+  }
 
   const completeHandler = () => {
-    onComplete(filteredOptions.filter((item) => item.isSelected));
-    closePopover();
-  };
+    onComplete(filteredOptions.filter((item) => item.isSelected))
+    closePopover()
+  }
 
   const checkBoxThemeColor = React.useMemo(
     () => (primaryColor ? primaryColor : 'auto'),
-    [primaryColor],
-  );
+    [primaryColor]
+  )
 
   return (
     <PopoverContainer ref={popoverRef}>
@@ -136,16 +136,16 @@ export default function Popover({
                   disabled={Boolean(dataItem.isDisabled)}
                   checked={dataItem.isSelected}
                   onChange={() => {
-                    if (!Boolean(dataItem.isDisabled)) {
-                      onStateChange(dataItem.value);
+                    if (!dataItem.isDisabled) {
+                      onStateChange(dataItem.value)
                     }
                   }}
                 />
               </CheckboxContainer>
               <TextButton
                 clickHandler={() => {
-                  if (!Boolean(dataItem.isDisabled)) {
-                    onStateChange(dataItem.value);
+                  if (!dataItem.isDisabled) {
+                    onStateChange(dataItem.value)
                   }
                 }}
                 text={dataItem.label}
@@ -153,14 +153,14 @@ export default function Popover({
               {isOnlyRequired && (
                 <OnlyLabelContainer
                   onClick={() => {
-                    onOnlyChange(dataItem.value);
+                    onOnlyChange(dataItem.value)
                   }}
                 >
                   {defaultLocale.only}
                 </OnlyLabelContainer>
               )}
             </RowContainer>
-          );
+          )
         })}
       </ListContainerContainer>
       <ButtonsContainer>
@@ -174,5 +174,5 @@ export default function Popover({
         />
       </ButtonsContainer>
     </PopoverContainer>
-  );
+  )
 }

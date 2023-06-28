@@ -1,29 +1,29 @@
 export interface CustomButtonPropsType {
-  clickHandler: () => void;
-  text: string;
+  clickHandler: () => void
+  text: string
 }
 
 interface ColorsPropsType {
-  primary: string;
+  primary: string
 }
 
 interface ThemePropsType {
-  colors: ColorsPropsType;
+  colors: ColorsPropsType
 }
 
 export interface ThemeProviderPropsType {
-  theme?: ThemePropsType;
+  theme?: ThemePropsType
 }
 
 export interface CustomInputPropsType {
-  className?: string;
-  changeHandler: (value: string) => void;
-  placeHolder: string;
-  value: string;
+  className?: string
+  changeHandler: (value: string) => void
+  placeHolder: string
+  value: string
 }
 
 export interface IconProps {
-  fill?: string;
-  height?: number | string;
-  width?: number | string;
+  fill?: string
+  height?: number | string
+  width?: number | string
 }

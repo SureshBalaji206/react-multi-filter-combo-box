@@ -4,4 +4,4 @@ export const defaultLocale = {
   placeHolder: 'Select...',
   selectAll: 'Select All',
   submit: 'OK',
-};
+}

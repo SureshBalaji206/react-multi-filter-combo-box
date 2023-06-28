@@ -1,19 +1,19 @@
-import React from 'react';
-import Popover from '../Popover';
-import DownArraycon from '../../Icons/DownArrow';
+import React, { useCallback, useMemo, useState, useRef } from 'react'
+import { ThemeProvider } from '@emotion/react'
+import Popover from '../Popover'
+import DownArraycon from '../../Icons/DownArrow'
 
-import { ThemeProvider } from '@emotion/react';
-import { defaultLocale } from '../../constants';
-import { comboBoxType } from '../../types/combobox';
-import { getSelectedItemsPlaceHolder } from '../../helpers';
-import { useClickOutside } from '../../hooks/useClickOutside';
+import { defaultLocale } from '../../constants'
+import { comboBoxType } from '../../types/combobox'
+import { getSelectedItemsPlaceHolder } from '../../helpers'
+import { useClickOutside } from '../../hooks/useClickOutside'
 
 import {
   RootContainer,
   DisplayContainer,
   IconContainer,
   ShowSelectedItemsContainer,
-} from './index.styled';
+} from './index.styled'
 
 export default function ComboBox({
   cancelText = defaultLocale.cancel,
@@ -27,39 +27,35 @@ export default function ComboBox({
   submitText = defaultLocale.submit,
   value = [],
 }: comboBoxType) {
-  const popoverRef = React.useRef(null);
-  const [toggle, setToggle] = React.useState<boolean>(false);
-  const closePopover = React.useCallback(() => setToggle(false), []);
+  const popoverRef = useRef(null)
+  const [toggle, setToggle] = useState<boolean>(false)
+  const closePopover = useCallback(() => setToggle(false), [])
 
-  useClickOutside(popoverRef, closePopover);
+  useClickOutside(popoverRef, closePopover)
 
   const openPopover = () => {
-    setToggle(true);
-  };
+    setToggle(true)
+  }
 
-  const renderLeftAdornment = React.useMemo(() => {
-    return leftAdornment ? (
-      <IconContainer>{leftAdornment}</IconContainer>
-    ) : null;
-  }, [leftAdornment]);
+  const renderLeftAdornment = useMemo(() => {
+    return leftAdornment ? <IconContainer>{leftAdornment}</IconContainer> : null
+  }, [leftAdornment])
 
-  const renderPlaceHolder = React.useMemo(() => {
-    return Boolean(value.length)
-      ? getSelectedItemsPlaceHolder(value)
-      : placeHolder;
-  }, [value, placeHolder]);
+  const renderPlaceHolder = useMemo(() => {
+    return value.length ? getSelectedItemsPlaceHolder(value) : placeHolder
+  }, [value, placeHolder])
 
-  const renderRightAdornment = React.useMemo(() => {
+  const renderRightAdornment = useMemo(() => {
     return rightAdornment ? (
       <IconContainer>{rightAdornment}</IconContainer>
     ) : (
       <IconContainer>
         <DownArraycon />
       </IconContainer>
-    );
-  }, [rightAdornment]);
+    )
+  }, [rightAdornment])
 
-  const renderPopover = React.useMemo(() => {
+  const renderPopover = useMemo(() => {
     if (toggle) {
       return (
         <Popover
@@ -73,10 +69,10 @@ export default function ComboBox({
           submitText={submitText}
           value={value}
         />
-      );
+      )
     }
 
-    return <React.Fragment />;
+    return <React.Fragment />
   }, [
     toggle,
     popoverRef,
@@ -88,15 +84,15 @@ export default function ComboBox({
     selectAllText,
     submitText,
     value,
-  ]);
+  ])
 
-  const theme = React.useMemo(() => {
+  const theme = useMemo(() => {
     return {
       colors: {
         primary: primaryColor,
       },
-    };
-  }, [primaryColor]);
+    }
+  }, [primaryColor])
 
   return (
     <ThemeProvider theme={theme}>
@@ -111,5 +107,5 @@ export default function ComboBox({
         {renderPopover}
       </RootContainer>
     </ThemeProvider>
-  );
+  )
 }

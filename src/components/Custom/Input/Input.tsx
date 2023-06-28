@@ -1,7 +1,7 @@
-import React from 'react';
-import styled from '@emotion/styled';
-import { CustomInputPropsType } from '../../../types/utils';
-import { global_font_style } from '../../ComboBox/index.styled';
+import React from 'react'
+import styled from '@emotion/styled'
+import { CustomInputPropsType } from '../../../types/utils'
+import { global_font_style } from '../../ComboBox/index.styled'
 
 const Component: React.FunctionComponent<CustomInputPropsType> = ({
   className,
@@ -17,8 +17,8 @@ const Component: React.FunctionComponent<CustomInputPropsType> = ({
       placeholder={placeHolder}
       value={value}
     />
-  );
-};
+  )
+}
 
 export const CustomInput = styled(Component)`
   border: none;
@@ -31,4 +31,4 @@ export const CustomInput = styled(Component)`
     border: none;
     outline: none;
   }
-`;
+`
