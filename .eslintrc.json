@@ -61,14 +61,39 @@
                 "groups": [
                     "builtin",
                     "external",
+                    "internal",
                     [
-                        "internal",
-                        "sibling",
                         "parent",
-                        "index"
+                        "sibling"
                     ],
-                    "object"
-                ]
+                    "index"
+                ],
+                "pathGroups": [
+                    {
+                        "pattern": "react",
+                        "group": "external",
+                        "position": "before"
+                    },
+                    {
+                        "pattern": "@emotion/react",
+                        "group": "external",
+                        "position": "before"
+                    },
+                    {
+                        "pattern": "@emotion/styled",
+                        "group": "external",
+                        "position": "before"
+                    }
+                ],
+                "pathGroupsExcludedImportTypes": [
+                    "react",
+                    "@emotion/react",
+                    "@emotion/styled"
+                ],
+                "alphabetize": {
+                    "order": "asc",
+                    "caseInsensitive": true
+                }
             }
         ],
         "react/jsx-filename-extension": [

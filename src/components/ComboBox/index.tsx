@@ -1,19 +1,17 @@
 import React, { useCallback, useMemo, useState, useRef } from 'react'
 import { ThemeProvider } from '@emotion/react'
-import Popover from '../Popover'
-import DownArraycon from '../../Icons/DownArrow'
-
-import { defaultLocale } from '../../constants'
-import { comboBoxType } from '../../types/combobox'
-import { getSelectedItemsPlaceHolder } from '../../helpers'
-import { useClickOutside } from '../../hooks/useClickOutside'
-
 import {
   RootContainer,
   DisplayContainer,
   IconContainer,
   ShowSelectedItemsContainer,
 } from './index.styled'
+import { defaultLocale } from '../../constants'
+import { getSelectedItemsPlaceHolder } from '../../helpers'
+import { useClickOutside } from '../../hooks/useClickOutside'
+import DownArraycon from '../../Icons/DownArrow'
+import { comboBoxType } from '../../types/combobox'
+import Popover from '../Popover'
 
 export default function ComboBox({
   cancelText = defaultLocale.cancel,

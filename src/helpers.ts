@@ -1,11 +1,6 @@
-import {
-  comboBoxDataProviderType,
-  comboBoxSelectedItemsType,
-} from './types/combobox'
+import { comboBoxDataProviderType, comboBoxSelectedItemsType } from './types/combobox'
 
-export const getSelectedItemsPlaceHolder = (
-  selectedItems: comboBoxSelectedItemsType[]
-) => {
+export const getSelectedItemsPlaceHolder = (selectedItems: comboBoxSelectedItemsType[]) => {
   return selectedItems
     .map((selectedItem) => selectedItem.label)
     .join(', ')

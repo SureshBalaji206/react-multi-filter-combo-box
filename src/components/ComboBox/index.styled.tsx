@@ -20,7 +20,6 @@ export const RootContainer = styled.div`
 
 export const DisplayContainer = styled.div`
   align-items: center;
-  border: ${global_border_style};
   display: flex;
   height: 35px;
   width: 100%;

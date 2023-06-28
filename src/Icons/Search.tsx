@@ -1,11 +1,7 @@
 import React from 'react'
 import { IconProps } from '../types/utils'
 
-export default function SearchIcon({
-  fill = 'gray',
-  height = 15,
-  width = 15,
-}: IconProps) {
+export default function SearchIcon({ fill = 'gray', height = 15, width = 15 }: IconProps) {
   return (
     <svg
       xmlns='http://www.w3.org/2000/svg'

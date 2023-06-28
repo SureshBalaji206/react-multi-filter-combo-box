@@ -11,6 +11,7 @@ import {
 export const PopoverContainer = styled.div`
   background-color: #ffffff;
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  top: 0;
   left: 0;
   position: absolute;
   z-index: 100;
@@ -80,6 +81,5 @@ export const OnlyLabelContainer = styled.div<ThemeProviderPropsType>`
   cursor: pointer;
   text-align: center;
   width: 50px;
-  color: ${({ theme }) =>
-    theme.colors.primary ? theme.colors.primary : 'black'};
+  color: ${({ theme }) => (theme.colors.primary ? theme.colors.primary : 'black')};
 `

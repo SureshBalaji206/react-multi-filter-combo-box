@@ -23,8 +23,7 @@ export const ActionButtonContainer = styled.button<ThemeProviderPropsType>`
   vertical-align: baseline;
   width: auto;
   font-family: ${global_font_style};
-  color: ${({ theme }) =>
-    theme.colors.primary ? theme.colors.primary : 'black'};
+  color: ${({ theme }) => (theme.colors.primary ? theme.colors.primary : 'black')};
 `
 
 export const TextButtonContainer = styled.button`

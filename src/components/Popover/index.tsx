@@ -1,20 +1,4 @@
 import React from 'react'
-import SearchIcon from '../../Icons/Search'
-
-import { defaultLocale } from '../../constants'
-import { popoverType } from '../../types/popover'
-import { CustomInput } from '../Custom/Input/Input'
-import { IconContainer } from '../ComboBox/index.styled'
-import { ActionButton, TextButton } from '../Custom/Button'
-import { comboBoxSelectedItemsType } from '../../types/combobox'
-
-import {
-  generateOptions,
-  performOnlyChange,
-  performSelectAllChange,
-  performStateChange,
-} from '../../helpers'
-
 import {
   ButtonsContainer,
   CheckboxContainer,
@@ -25,6 +9,19 @@ import {
   SearchContainer,
   SelectAllContainer,
 } from './index.styled'
+import { defaultLocale } from '../../constants'
+import {
+  generateOptions,
+  performOnlyChange,
+  performSelectAllChange,
+  performStateChange,
+} from '../../helpers'
+import SearchIcon from '../../Icons/Search'
+import { comboBoxSelectedItemsType } from '../../types/combobox'
+import { popoverType } from '../../types/popover'
+import { IconContainer } from '../ComboBox/index.styled'
+import { ActionButton, TextButton } from '../Custom/Button'
+import { CustomInput } from '../Custom/Input/Input'
 
 const isOnlyRequired = false
 
@@ -41,13 +38,9 @@ export default function Popover({
 }: popoverType) {
   const [query, setQuery] = React.useState<string>('')
 
-  const [generatedOptions, setGeneratedOptions] = React.useState<
-    comboBoxSelectedItemsType[]
-  >([])
+  const [generatedOptions, setGeneratedOptions] = React.useState<comboBoxSelectedItemsType[]>([])
 
-  const [filteredOptions, setFilteredOptions] = React.useState<
-    comboBoxSelectedItemsType[]
-  >([])
+  const [filteredOptions, setFilteredOptions] = React.useState<comboBoxSelectedItemsType[]>([])
 
   React.useEffect(() => {
     setGeneratedOptions(generateOptions(dataProvider, value))
@@ -82,9 +75,7 @@ export default function Popover({
   }
 
   const selectAllHandler = () => {
-    setGeneratedOptions(
-      performSelectAllChange(generatedOptions, !isAllSelected)
-    )
+    setGeneratedOptions(performSelectAllChange(generatedOptions, !isAllSelected))
   }
 
   const completeHandler = () => {
@@ -120,10 +111,7 @@ export default function Popover({
             onChange={selectAllHandler}
           />
         </CheckboxContainer>
-        <TextButton
-          clickHandler={selectAllHandler}
-          text={selectAllText ? selectAllText : ''}
-        />
+        <TextButton clickHandler={selectAllHandler} text={selectAllText ? selectAllText : ''} />
       </SelectAllContainer>
       <ListContainerContainer>
         {filteredOptions.map((dataItem) => {
@@ -164,14 +152,8 @@ export default function Popover({
         })}
       </ListContainerContainer>
       <ButtonsContainer>
-        <ActionButton
-          clickHandler={closePopover}
-          text={cancelText ? cancelText : ''}
-        />
-        <ActionButton
-          clickHandler={completeHandler}
-          text={submitText ? submitText : ''}
-        />
+        <ActionButton clickHandler={closePopover} text={cancelText ? cancelText : ''} />
+        <ActionButton clickHandler={completeHandler} text={submitText ? submitText : ''} />
       </ButtonsContainer>
     </PopoverContainer>
   )
