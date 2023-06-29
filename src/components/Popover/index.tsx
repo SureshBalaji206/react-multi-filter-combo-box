@@ -17,8 +17,7 @@ import {
   performStateChange,
 } from '../../helpers'
 import SearchIcon from '../../Icons/Search'
-import { comboBoxSelectedItemsType } from '../../types/combobox'
-import { popoverType } from '../../types/popover'
+import { comboBoxSelectedItemsType, popoverType } from '../../types'
 import { IconContainer } from '../ComboBox/index.styled'
 import { ActionButton, TextButton } from '../Custom/Button'
 import { CustomInput } from '../Custom/Input/Input'
@@ -97,7 +96,7 @@ export default function Popover({
           </IconContainer>
         </CheckboxContainer>
         <CustomInput
-          changeHandler={(value) => setQuery(value)}
+          changeHandler={(value: any) => setQuery(value)}
           placeHolder='search...'
           value={query}
         />

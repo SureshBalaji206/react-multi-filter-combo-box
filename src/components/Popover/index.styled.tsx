@@ -1,5 +1,5 @@
 import styled from '@emotion/styled'
-import { ThemeProviderPropsType } from '../../types/utils'
+import { ThemeProviderPropsType } from 'src/types'
 
 export const PopoverContainer = styled.div<ThemeProviderPropsType>`
   background-color: ${(props) => props.theme.colors.backgroundColor};

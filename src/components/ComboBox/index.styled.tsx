@@ -1,5 +1,5 @@
 import styled from '@emotion/styled'
-import { ThemeProviderPropsType } from 'src/types/utils'
+import { ThemeProviderPropsType } from '../../types'
 
 export const RootContainer = styled.div<ThemeProviderPropsType>`
   background-color: ${(props) => props.theme.colors.backgroundColor};

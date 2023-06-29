@@ -2,7 +2,7 @@ import React, { ReactNode } from 'react'
 import ComboBox from './components/ComboBox'
 import { defaultLocale, defaultStyles } from './constants'
 import AppThemeProvider from './context/ThemeContext'
-import { comboBoxDataProviderType, comboBoxSelectedItemsType } from './types/combobox'
+import { comboBoxDataProviderType, comboBoxSelectedItemsType } from './types'
 
 interface AppPropType {
   backgroundColor?: string

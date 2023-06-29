@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import ComboBox from '../components/ComboBox'
 import { defaultStyles } from '../constants'
 import AppThemeProvider from '../context/ThemeContext'
-import { comboBoxSelectedItemsType, comboBoxType } from '../types/combobox'
+import { comboBoxSelectedItemsType, comboBoxType } from '../types'
 
 const dataProvider = [
   {
