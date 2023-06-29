@@ -1,2 +1,2 @@
-import ComboBox from './components/ComboBox';
-export { ComboBox };
+import App from './App';
+export { App as ComboBox };

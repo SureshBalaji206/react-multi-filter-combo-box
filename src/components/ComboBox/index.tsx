@@ -1,12 +1,10 @@
 import React, { useCallback, useMemo, useState, useRef } from 'react'
-import { ThemeProvider } from '@emotion/react'
 import {
   RootContainer,
   DisplayContainer,
   IconContainer,
   ShowSelectedItemsContainer,
 } from './index.styled'
-import { defaultLocale } from '../../constants'
 import { getSelectedItemsPlaceHolder } from '../../helpers'
 import { useClickOutside } from '../../hooks/useClickOutside'
 import DownArraycon from '../../Icons/DownArrow'
@@ -14,15 +12,14 @@ import { comboBoxType } from '../../types/combobox'
 import Popover from '../Popover'
 
 export default function ComboBox({
-  cancelText = defaultLocale.cancel,
-  dataProvider = [],
-  leftAdornment = null,
+  cancelText,
+  dataProvider,
+  leftAdornment,
   onComplete = () => null,
-  placeHolder = defaultLocale.placeHolder,
-  primaryColor = 'unset',
-  rightAdornment = null,
-  selectAllText = defaultLocale.selectAll,
-  submitText = defaultLocale.submit,
+  placeHolder,
+  rightAdornment,
+  selectAllText,
+  submitText,
   value = [],
 }: comboBoxType) {
   const popoverRef = useRef(null)
@@ -62,7 +59,6 @@ export default function ComboBox({
           dataProvider={dataProvider}
           onComplete={onComplete}
           popoverRef={popoverRef}
-          primaryColor={primaryColor}
           selectAllText={selectAllText}
           submitText={submitText}
           value={value}
@@ -77,33 +73,20 @@ export default function ComboBox({
     cancelText,
     closePopover,
     dataProvider,
-    primaryColor,
     onComplete,
     selectAllText,
     submitText,
     value,
   ])
 
-  const theme = useMemo(() => {
-    return {
-      colors: {
-        primary: primaryColor,
-      },
-    }
-  }, [primaryColor])
-
   return (
-    <ThemeProvider theme={theme}>
-      <RootContainer>
-        <DisplayContainer onClick={openPopover}>
-          {renderLeftAdornment}
-          <ShowSelectedItemsContainer hasLeftAdornment={Boolean(leftAdornment)}>
-            {renderPlaceHolder}
-          </ShowSelectedItemsContainer>
-          {renderRightAdornment}
-        </DisplayContainer>
-        {renderPopover}
-      </RootContainer>
-    </ThemeProvider>
+    <RootContainer>
+      <DisplayContainer onClick={openPopover}>
+        {renderLeftAdornment}
+        <ShowSelectedItemsContainer>{renderPlaceHolder}</ShowSelectedItemsContainer>
+        {renderRightAdornment}
+      </DisplayContainer>
+      {renderPopover}
+    </RootContainer>
   )
 }

@@ -5,17 +5,21 @@ const storyConfig = {
   component: SimpleComboBox,
   tags: ['autodocs'],
   argTypes: {
+    backgroundColor: { control: 'color' },
     primaryColor: { control: 'color' },
+    textColor: { control: 'color' },
   },
 }
 
 export const Simple = {
   args: {
+    backgroundColor: 'white',
     cancelText: 'CANCEL',
     placeHolder: 'Select a sport',
-    primaryColor: '',
+    primaryColor: 'unset',
     selectAllText: 'Select All',
     submitText: 'OK',
+    textColor: 'black',
   },
 }
 

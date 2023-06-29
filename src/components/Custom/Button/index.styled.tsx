@@ -1,10 +1,14 @@
 import styled from '@emotion/styled'
 import { ThemeProviderPropsType } from '../../../types/utils'
-import { global_font_style } from '../../ComboBox/index.styled'
 
 export const ActionButtonContainer = styled.button<ThemeProviderPropsType>`
+  background-color: ${(props) => props.theme.colors.backgroundColor};
+  color: ${(props) =>
+    props.theme.colors.primaryColor
+      ? props.theme.colors.primaryColor
+      : props.theme.colors.textColor};
+  font-family: ${(props) => props.theme.styles.fontStyle};
   align-items: center;
-  background-color: #ffffff;
   border: none;
   box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;
   box-sizing: border-box;
@@ -22,12 +26,12 @@ export const ActionButtonContainer = styled.button<ThemeProviderPropsType>`
   touch-action: manipulation;
   vertical-align: baseline;
   width: auto;
-  font-family: ${global_font_style};
-  color: ${({ theme }) => (theme.colors.primary ? theme.colors.primary : 'black')};
 `
 
-export const TextButtonContainer = styled.button`
-  background-color: #ffffff;
+export const TextButtonContainer = styled.button<ThemeProviderPropsType>`
+  background-color: ${(props) => props.theme.colors.backgroundColor};
+  color: ${(props) => props.theme.colors.textColor};
+  font-family: ${(props) => props.theme.styles.fontStyle};
   border: none;
   cursor: pointer;
   line-height: 1.25;
@@ -43,5 +47,4 @@ export const TextButtonContainer = styled.button`
   overflow: hidden;
   width: calc(100% - 40px);
   padding: 0px 5px;
-  font-family: ${global_font_style};
 `

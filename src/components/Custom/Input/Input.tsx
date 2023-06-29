@@ -1,7 +1,6 @@
 import React from 'react'
 import styled from '@emotion/styled'
-import { CustomInputPropsType } from '../../../types/utils'
-import { global_font_style } from '../../ComboBox/index.styled'
+import { CustomInputPropsType, ThemeProviderPropsType } from '../../../types/utils'
 
 const Component: React.FunctionComponent<CustomInputPropsType> = ({
   className,
@@ -20,10 +19,11 @@ const Component: React.FunctionComponent<CustomInputPropsType> = ({
   )
 }
 
-export const CustomInput = styled(Component)`
+export const CustomInput = styled(Component)<ThemeProviderPropsType>`
+  background-color: ${(props) => props.theme.colors.backgroundColor};
+  color: ${(props) => props.theme.colors.textColor};
+  font-family: ${(props) => props.theme.styles.fontStyle};
   border: none;
-  color: gray;
-  font-family: ${global_font_style};
   height: 30px;
   padding-left: 5px;
   width: 100%;

@@ -3,10 +3,20 @@ export interface CustomButtonPropsType {
     text: string;
 }
 interface ColorsPropsType {
-    primary: string;
+    backgroundColor: string;
+    primaryColor: string;
+    textColor: string;
+}
+interface StylesPropType {
+    borderStyle: string;
+    containerHeight: string;
+    containerPadding: string;
+    containerWidth: string;
+    fontStyle: string;
 }
 interface ThemePropsType {
     colors: ColorsPropsType;
+    styles: StylesPropType;
 }
 export interface ThemeProviderPropsType {
     theme?: ThemePropsType;

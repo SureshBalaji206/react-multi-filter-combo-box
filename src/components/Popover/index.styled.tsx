@@ -1,53 +1,47 @@
 import styled from '@emotion/styled'
 import { ThemeProviderPropsType } from '../../types/utils'
 
-import {
-  global_border_style,
-  global_container_padding,
-  root_container_height,
-  root_container_width,
-} from '../ComboBox/index.styled'
-
-export const PopoverContainer = styled.div`
-  background-color: #ffffff;
+export const PopoverContainer = styled.div<ThemeProviderPropsType>`
+  background-color: ${(props) => props.theme.colors.backgroundColor};
+  color: ${(props) => props.theme.colors.textColor};
+  height: ${(props) => props.theme.styles.containerHeight};
+  width: ${(props) => props.theme.styles.containerWidth};
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
   top: 0;
   left: 0;
   position: absolute;
   z-index: 100;
   margin: 0px;
-  height: ${root_container_height};
-  width: ${root_container_width};
 `
 
-export const SearchContainer = styled.div`
+export const SearchContainer = styled.div<ThemeProviderPropsType>`
+  border-bottom: ${(props) => props.theme.styles.borderStyle};
+  padding: ${(props) => props.theme.styles.containerPadding};
   display: flex;
   align-items: center;
   height: 35px;
-  padding: ${global_container_padding};
-  border-bottom: ${global_border_style};
 `
 
-export const SelectAllContainer = styled.div`
+export const SelectAllContainer = styled.div<ThemeProviderPropsType>`
+  border-bottom: ${(props) => props.theme.styles.borderStyle};
+  padding: ${(props) => props.theme.styles.containerPadding};
   height: 35px;
-  padding: ${global_container_padding};
   display: flex;
   align-items: center;
-  border-bottom: ${global_border_style};
   margin-bottom: 10px;
 `
 
-export const ListContainerContainer = styled.div`
+export const ListContainerContainer = styled.div<ThemeProviderPropsType>`
+  padding: ${(props) => props.theme.styles.containerPadding};
   overflow: auto;
   height: calc(100% - 140px);
-  padding: ${global_container_padding};
 `
 
-export const ButtonsContainer = styled.div`
-  border-top: ${global_border_style};
+export const ButtonsContainer = styled.div<ThemeProviderPropsType>`
+  border-top: ${(props) => props.theme.styles.borderStyle};
+  padding: ${(props) => props.theme.styles.containerPadding};
   margin-top: 10px;
   height: 50px;
-  padding: ${global_container_padding};
   display: flex;
   align-items: center;
   justify-content: space-around;
@@ -78,8 +72,8 @@ export const LabelContainer = styled.div`
 `
 
 export const OnlyLabelContainer = styled.div<ThemeProviderPropsType>`
+  color: ${(props) => props.theme.colors.textColor};
   cursor: pointer;
   text-align: center;
   width: 50px;
-  color: ${({ theme }) => (theme.colors.primary ? theme.colors.primary : 'black')};
 `

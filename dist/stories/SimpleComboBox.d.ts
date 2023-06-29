@@ -2,19 +2,23 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { comboBoxType } from '../types/combobox';
 export declare const SimpleComboBox: {
-    ({ cancelText, placeHolder, primaryColor, selectAllText, submitText, }: comboBoxType): React.JSX.Element;
+    ({ backgroundColor, cancelText, placeHolder, primaryColor, selectAllText, submitText, textColor, }: comboBoxType): React.JSX.Element;
     propTypes: {
+        backgroundColor: PropTypes.Requireable<string>;
         cancelText: PropTypes.Requireable<string>;
         placeHolder: PropTypes.Requireable<string>;
         primaryColor: PropTypes.Requireable<string>;
         selectAllText: PropTypes.Requireable<string>;
         submitText: PropTypes.Requireable<string>;
+        textColor: PropTypes.Requireable<string>;
     };
     defaultProps: {
+        backgroundColor: string;
         cancelText: string;
         placeHolder: string;
         primaryColor: string;
         selectAllText: string;
         submitText: string;
+        textColor: string;
     };
 };

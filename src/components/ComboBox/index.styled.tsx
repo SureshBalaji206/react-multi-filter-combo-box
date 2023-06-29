@@ -1,21 +1,13 @@
 import styled from '@emotion/styled'
-import { ShowSelectedItemsContainerType } from '../../types/combobox'
+import { ThemeProviderPropsType } from 'src/types/utils'
 
-export const global_container_padding = '0px 10px'
-export const global_border_style = '1px solid lightgray'
-export const global_font_style = `system-ui, -apple-system, system-ui, 'Helvetica Neue', Helvetica,
-Arial, sans-serif`
-
-export const root_container_height = '330px'
-export const root_container_width = '240px'
-
-export const RootContainer = styled.div`
-  background-color: #ffffff;
-  color: black;
+export const RootContainer = styled.div<ThemeProviderPropsType>`
+  background-color: ${(props) => props.theme.colors.backgroundColor};
+  color: ${(props) => props.theme.colors.textColor};
+  font-family: ${(props) => props.theme.styles.fontStyle};
+  width: ${(props) => props.theme.styles.containerWidth};
   font-size: 0.875rem;
-  font-family: ${global_font_style};
   position: relative;
-  width: ${root_container_width};
 `
 
 export const DisplayContainer = styled.div`
@@ -33,11 +25,11 @@ export const IconContainer = styled.div`
   width: 40px;
 `
 
-export const ShowSelectedItemsContainer = styled.div`
+export const ShowSelectedItemsContainer = styled.div<ThemeProviderPropsType>`
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
-  padding: ${global_container_padding};
-  width: ${(props: ShowSelectedItemsContainerType) =>
-    props.hasLeftAdornment ? `calc(100% - 80px)` : `calc(100% - 40px)`};
+  padding: ${(props) => props.theme.styles.containerPadding};
+  width: calc(100% - 80px);
 `
+//width: ${(props: ShowSelectedItemsContainerType) => props.hasLeftAdornment ? `calc(100% - 80px)` : `calc(100% - 40px)`};

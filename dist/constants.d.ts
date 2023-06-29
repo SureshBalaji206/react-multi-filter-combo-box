@@ -5,3 +5,13 @@ export declare const defaultLocale: {
     selectAll: string;
     submit: string;
 };
+export declare const defaultStyles: {
+    backgroundColor: string;
+    borderStyle: string;
+    containerHeight: string;
+    containerPadding: string;
+    containerWidth: string;
+    fontStyle: string;
+    primaryColor: string;
+    textColor: string;
+};

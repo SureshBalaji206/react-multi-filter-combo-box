@@ -15,6 +15,7 @@ export interface comboBoxSelectedItemsType {
     value: string;
 }
 export interface comboBoxType {
+    backgroundColor?: string;
     cancelText?: string;
     dataProvider: comboBoxDataProviderType[];
     leftAdornment?: ReactNode;
@@ -25,4 +26,5 @@ export interface comboBoxType {
     selectAllText?: string;
     submitText?: string;
     value?: comboBoxSelectedItemsType[];
+    textColor?: string;
 }
