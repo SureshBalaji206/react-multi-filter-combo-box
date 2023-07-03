@@ -83,7 +83,9 @@ export default function ComboBox({
     <RootContainer>
       <DisplayContainer onClick={openPopover}>
         {renderLeftAdornment}
-        <ShowSelectedItemsContainer>{renderPlaceHolder}</ShowSelectedItemsContainer>
+        <ShowSelectedItemsContainer hasLeftAdornment={Boolean(leftAdornment)}>
+          {renderPlaceHolder}
+        </ShowSelectedItemsContainer>
         {renderRightAdornment}
       </DisplayContainer>
       {renderPopover}

@@ -26,10 +26,10 @@ export const IconContainer = styled.div`
 `
 
 export const ShowSelectedItemsContainer = styled.div<ThemeProviderPropsType>`
+  padding: ${(props) => props.theme.styles.containerPadding};
+  width: ${(props) => props.hasLeftAdornment ? `calc(100% - 80px)` : `calc(100% - 40px)`};
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
-  padding: ${(props) => props.theme.styles.containerPadding};
   width: calc(100% - 80px);
 `
-//width: ${(props: ShowSelectedItemsContainerType) => props.hasLeftAdornment ? `calc(100% - 80px)` : `calc(100% - 40px)`};

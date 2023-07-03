@@ -71,6 +71,7 @@ interface ThemePropsType {
 
 export interface ThemeProviderPropsType {
   theme?: ThemePropsType
+  hasLeftAdornment?: boolean
 }
 
 export interface CustomInputPropsType {
