@@ -1,5 +1,5 @@
 import React, { ReactNode } from 'react';
-import { comboBoxDataProviderType, comboBoxSelectedItemsType } from './types/combobox';
+import { comboBoxDataProviderType, comboBoxSelectedItemsType } from './types';
 interface AppPropType {
     backgroundColor?: string;
     cancelText?: string;

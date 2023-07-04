@@ -36,9 +36,7 @@ export default function Popover({
   value,
 }: popoverType) {
   const [query, setQuery] = React.useState<string>('')
-
   const [generatedOptions, setGeneratedOptions] = React.useState<comboBoxSelectedItemsType[]>([])
-
   const [filteredOptions, setFilteredOptions] = React.useState<comboBoxSelectedItemsType[]>([])
 
   React.useEffect(() => {

@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { comboBoxType } from '../types/combobox';
+import { comboBoxType } from '../types';
 export declare const SimpleComboBox: {
     ({ backgroundColor, cancelText, placeHolder, primaryColor, selectAllText, submitText, textColor, }: comboBoxType): React.JSX.Element;
     propTypes: {

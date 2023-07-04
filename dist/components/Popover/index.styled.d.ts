@@ -1,5 +1,5 @@
 /// <reference types="react" />
-import { ThemeProviderPropsType } from '../../types/utils';
+import { ThemeProviderPropsType } from 'src/types';
 export declare const PopoverContainer: import("@emotion/styled").StyledComponent<{
     theme?: import("@emotion/react").Theme | undefined;
     as?: import("react").ElementType<any> | undefined;
