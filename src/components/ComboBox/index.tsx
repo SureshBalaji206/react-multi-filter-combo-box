@@ -8,7 +8,7 @@ import {
 import { getSelectedItemsPlaceHolder } from '../../helpers'
 import { useClickOutside } from '../../hooks/useClickOutside'
 import DownArraycon from '../../Icons/DownArrow'
-import { comboBoxType } from '../../types'
+import { comboBoxType } from '../../types/combobox'
 import Popover from '../Popover'
 
 export default function ComboBox({

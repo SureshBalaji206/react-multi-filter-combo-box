@@ -17,7 +17,8 @@ import {
   performStateChange,
 } from '../../helpers'
 import SearchIcon from '../../Icons/Search'
-import { comboBoxSelectedItemsType, popoverType } from '../../types'
+import { comboBoxSelectedItemsType } from '../../types/combobox'
+import { popoverType } from '../../types/popover'
 import { IconContainer } from '../ComboBox/index.styled'
 import { ActionButton, TextButton } from '../Custom/Button'
 import { CustomInput } from '../Custom/Input/Input'

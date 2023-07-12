@@ -1,5 +1,5 @@
 import React from 'react'
-import { IconProps } from 'src/types'
+import { IconProps } from '../types/icon'
 
 export default function SearchIcon({ fill = 'gray', height = 15, width = 15 }: IconProps) {
   return (

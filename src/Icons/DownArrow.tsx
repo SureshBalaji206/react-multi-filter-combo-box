@@ -1,5 +1,5 @@
 import React from 'react'
-import { IconProps } from 'src/types'
+import { IconProps } from '../types/icon'
 
 export default function DownArraycon({ fill = 'gray', height = 24, width = 24 }: IconProps) {
   return (

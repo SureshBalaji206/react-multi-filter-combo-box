@@ -1,7 +1,7 @@
 declare const storyConfig: {
     title: string;
     component: {
-        ({ backgroundColor, cancelText, placeHolder, primaryColor, selectAllText, submitText, textColor, }: import("../types").comboBoxType): import("react").JSX.Element;
+        ({ backgroundColor, cancelText, placeHolder, primaryColor, selectAllText, submitText, textColor, }: import("../types/combobox").comboBoxType): import("react").JSX.Element;
         propTypes: {
             backgroundColor: import("prop-types").Requireable<string>;
             cancelText: import("prop-types").Requireable<string>;

@@ -1,17 +1,6 @@
-import React, { createContext, ReactNode } from 'react'
+import React, { createContext } from 'react'
 import { ThemeProvider } from '@emotion/react'
-
-interface AppThemeProviderPropType {
-  backgroundColor: string
-  borderStyle: string
-  children: ReactNode
-  containerHeight: string
-  containerPadding: string
-  containerWidth: string
-  primaryColor: string
-  fontStyle: string
-  textColor: string
-}
+import { AppThemeProviderPropType } from '../types/theme'
 
 export const AppThemeContext = createContext<null>(null)
 

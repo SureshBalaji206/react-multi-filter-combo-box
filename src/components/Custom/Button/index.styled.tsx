@@ -1,5 +1,5 @@
 import styled from '@emotion/styled'
-import { ThemeProviderPropsType } from '../../../types'
+import { ThemeProviderPropsType } from '../../../types/theme'
 
 export const ActionButtonContainer = styled.button<ThemeProviderPropsType>`
   background-color: ${(props) => props.theme.colors.backgroundColor};

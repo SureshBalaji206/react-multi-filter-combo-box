@@ -1,5 +1,5 @@
 /// <reference types="react" />
-import { ThemeProviderPropsType } from '../../../types';
+import { ThemeProviderPropsType } from '../../../types/theme';
 export declare const ActionButtonContainer: import("@emotion/styled").StyledComponent<{
     theme?: import("@emotion/react").Theme | undefined;
     as?: import("react").ElementType<any> | undefined;

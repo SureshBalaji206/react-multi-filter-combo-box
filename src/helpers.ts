@@ -1,4 +1,4 @@
-import { comboBoxDataProviderType, comboBoxSelectedItemsType } from './types'
+import { comboBoxDataProviderType, comboBoxSelectedItemsType } from './types/combobox'
 
 export const getSelectedItemsPlaceHolder = (selectedItems: comboBoxSelectedItemsType[]) => {
   return selectedItems

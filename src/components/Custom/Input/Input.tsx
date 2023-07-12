@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from '@emotion/styled'
-import { CustomInputPropsType, ThemeProviderPropsType } from 'src/types'
+import { CustomInputPropsType } from '../../../types/custom'
+import { ThemeProviderPropsType } from '../../../types/theme'
 
 const Component: React.FunctionComponent<CustomInputPropsType> = ({
   className,
