@@ -8,14 +8,14 @@ export interface comboBoxDataProviderType {
   isDisabled?: boolean
   isSelected?: boolean
   label: string
-  value: string
+  value: string | number
 }
 
 export interface comboBoxSelectedItemsType {
   isDisabled?: boolean
   isSelected: boolean
   label: string
-  value: string
+  value: string | number
 }
 
 export interface comboBoxType {

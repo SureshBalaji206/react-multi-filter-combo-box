@@ -63,11 +63,11 @@ export default function Popover({
       : false
   }, [generatedOptions])
 
-  const onStateChange = (identifier: string) => {
+  const onStateChange = (identifier: string | number) => {
     setGeneratedOptions(performStateChange(generatedOptions, identifier))
   }
 
-  const onOnlyChange = (identifier: string) => {
+  const onOnlyChange = (identifier: string | number) => {
     setGeneratedOptions(performOnlyChange(generatedOptions, identifier))
   }
 

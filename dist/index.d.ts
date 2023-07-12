@@ -1,2 +1,3 @@
 import App from './App';
-export { App as ComboBox };
+import { comboBoxDataProviderType, comboBoxSelectedItemsType } from './types';
+export { App as ComboBox, comboBoxDataProviderType, comboBoxSelectedItemsType };

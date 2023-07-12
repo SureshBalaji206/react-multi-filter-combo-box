@@ -58,7 +58,7 @@ export const generateOptions = (
 
 export const performStateChange = (
   dataProvider: comboBoxSelectedItemsType[],
-  identifier: string
+  identifier: string | number
 ) => {
   return dataProvider.map((option) => {
     if (option.value === identifier) {
@@ -71,7 +71,7 @@ export const performStateChange = (
 
 export const performOnlyChange = (
   dataProvider: comboBoxSelectedItemsType[],
-  identifier: string
+  identifier: string | number
 ) => {
   return dataProvider.map((option) => {
     if (option.value === identifier) {

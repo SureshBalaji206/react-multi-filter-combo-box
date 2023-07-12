@@ -9,6 +9,7 @@ const dataProvider = [
   {
     label: 'Cricket',
     value: '1',
+    isSelected: true,
   },
   {
     label: 'Athletics',
