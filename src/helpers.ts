@@ -1,6 +1,6 @@
-import { comboBoxDataProviderType, comboBoxSelectedItemsType } from './types/combobox'
+import { ComboBoxDataProviderType, ComboBoxSelectedItemsType } from './types/combobox'
 
-export const getSelectedItemsPlaceHolder = (selectedItems: comboBoxSelectedItemsType[]) => {
+export const getSelectedItemsPlaceHolder = (selectedItems: ComboBoxSelectedItemsType[]) => {
   return selectedItems
     .map((selectedItem) => selectedItem.label)
     .join(', ')
@@ -8,8 +8,8 @@ export const getSelectedItemsPlaceHolder = (selectedItems: comboBoxSelectedItems
 }
 
 const sortAlphabetically = (
-  element1: comboBoxDataProviderType,
-  element2: comboBoxDataProviderType
+  element1: ComboBoxDataProviderType,
+  element2: ComboBoxDataProviderType
 ) => {
   const element1Label = element1.label
   const element2Label = element2.label
@@ -24,8 +24,8 @@ const sortAlphabetically = (
 }
 
 const findIsSelected = (
-  selectedValues: comboBoxSelectedItemsType[],
-  item: comboBoxDataProviderType
+  selectedValues: ComboBoxSelectedItemsType[],
+  item: ComboBoxDataProviderType
 ) => {
   return Boolean(
     selectedValues.find((selectedValue) => {
@@ -35,8 +35,8 @@ const findIsSelected = (
 }
 
 export const generateOptions = (
-  dataProvider: comboBoxDataProviderType[],
-  selectedValues: comboBoxSelectedItemsType[]
+  dataProvider: ComboBoxDataProviderType[],
+  selectedValues: ComboBoxSelectedItemsType[]
 ) => {
   if (dataProvider) {
     const sortedArray = dataProvider.sort((element1, element2) => {
@@ -57,7 +57,7 @@ export const generateOptions = (
 }
 
 export const performStateChange = (
-  dataProvider: comboBoxSelectedItemsType[],
+  dataProvider: ComboBoxSelectedItemsType[],
   identifier: string | number
 ) => {
   return dataProvider.map((option) => {
@@ -70,7 +70,7 @@ export const performStateChange = (
 }
 
 export const performOnlyChange = (
-  dataProvider: comboBoxSelectedItemsType[],
+  dataProvider: ComboBoxSelectedItemsType[],
   identifier: string | number
 ) => {
   return dataProvider.map((option) => {
@@ -83,7 +83,7 @@ export const performOnlyChange = (
 }
 
 export const performSelectAllChange = (
-  dataProvider: comboBoxSelectedItemsType[],
+  dataProvider: ComboBoxSelectedItemsType[],
   stateToSelect: boolean
 ) => {
   return dataProvider.map((option) => {

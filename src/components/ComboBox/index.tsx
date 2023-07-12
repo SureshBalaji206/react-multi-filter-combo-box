@@ -8,7 +8,7 @@ import {
 import { getSelectedItemsPlaceHolder } from '../../helpers'
 import { useClickOutside } from '../../hooks/useClickOutside'
 import DownArraycon from '../../Icons/DownArrow'
-import { comboBoxType } from '../../types/combobox'
+import { ComboBoxType } from '../../types/combobox'
 import Popover from '../Popover'
 
 export default function ComboBox({
@@ -21,7 +21,7 @@ export default function ComboBox({
   selectAllText,
   submitText,
   value = [],
-}: comboBoxType) {
+}: ComboBoxType) {
   const popoverRef = useRef(null)
   const [toggle, setToggle] = useState<boolean>(false)
   const closePopover = useCallback(() => setToggle(false), [])

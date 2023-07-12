@@ -1,16 +1,16 @@
 import { ReactNode } from 'react';
-import { comboBoxDataProviderType, comboBoxSelectedItemsType } from '../types/combobox';
+import { ComboBoxDataProviderType, ComboBoxSelectedItemsType } from '../types/combobox';
 export interface AppPropType {
     backgroundColor?: string;
     cancelText?: string;
-    dataProvider: comboBoxDataProviderType[];
+    dataProvider: ComboBoxDataProviderType[];
     leftAdornment?: ReactNode;
-    onComplete?: (value: comboBoxSelectedItemsType[]) => void;
+    onComplete?: (value: ComboBoxSelectedItemsType[]) => void;
     placeHolder?: string;
     primaryColor?: string;
     rightAdornment?: ReactNode;
     selectAllText?: string;
     submitText?: string;
-    value?: comboBoxSelectedItemsType[];
+    value?: ComboBoxSelectedItemsType[];
     textColor?: string;
 }

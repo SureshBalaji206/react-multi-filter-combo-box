@@ -2,29 +2,29 @@ import { ReactNode } from 'react';
 export interface ShowSelectedItemsContainerType {
     hasLeftAdornment: boolean;
 }
-export interface comboBoxDataProviderType {
+export interface ComboBoxDataProviderType {
     isDisabled?: boolean;
     isSelected?: boolean;
     label: string;
     value: string | number;
 }
-export interface comboBoxSelectedItemsType {
+export interface ComboBoxSelectedItemsType {
     isDisabled?: boolean;
     isSelected: boolean;
     label: string;
     value: string | number;
 }
-export interface comboBoxType {
+export interface ComboBoxType {
     backgroundColor?: string;
     cancelText?: string;
-    dataProvider: comboBoxDataProviderType[];
+    dataProvider: ComboBoxDataProviderType[];
     leftAdornment?: ReactNode;
-    onComplete?: (value: comboBoxSelectedItemsType[]) => void;
+    onComplete?: (value: ComboBoxSelectedItemsType[]) => void;
     placeHolder?: string;
     primaryColor?: string;
     rightAdornment?: ReactNode;
     selectAllText?: string;
     submitText?: string;
-    value?: comboBoxSelectedItemsType[];
+    value?: ComboBoxSelectedItemsType[];
     textColor?: string;
 }

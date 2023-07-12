@@ -3,13 +3,12 @@ import PropTypes from 'prop-types'
 import ComboBox from '../components/ComboBox'
 import { defaultStyles } from '../constants'
 import AppThemeProvider from '../context/ThemeContext'
-import { comboBoxSelectedItemsType, comboBoxType } from '../types/combobox'
+import { ComboBoxSelectedItemsType, ComboBoxType } from '../types/combobox'
 
 const dataProvider = [
   {
     label: 'Cricket',
     value: '1',
-    isSelected: true,
   },
   {
     label: 'Athletics',
@@ -89,8 +88,8 @@ export const SimpleComboBox = ({
   selectAllText,
   submitText,
   textColor,
-}: comboBoxType) => {
-  const [value, setValue] = useState<comboBoxSelectedItemsType[]>([])
+}: ComboBoxType) => {
+  const [value, setValue] = useState<ComboBoxSelectedItemsType[]>([])
 
   return (
     <AppThemeProvider
@@ -107,7 +106,7 @@ export const SimpleComboBox = ({
         cancelText={cancelText}
         dataProvider={dataProvider}
         leftAdornment={null}
-        onComplete={(value: comboBoxSelectedItemsType[]) => setValue(value)}
+        onComplete={(value: ComboBoxSelectedItemsType[]) => setValue(value)}
         placeHolder={placeHolder}
         rightAdornment={null}
         selectAllText={selectAllText}

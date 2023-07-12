@@ -1,14 +1,14 @@
 import { RefObject } from 'react'
-import { comboBoxDataProviderType, comboBoxSelectedItemsType } from './combobox'
+import { ComboBoxDataProviderType, ComboBoxSelectedItemsType } from './combobox'
 
 export interface popoverType {
   cancelText?: string
   closePopover: () => void
-  dataProvider: comboBoxDataProviderType[]
-  onComplete: (value: comboBoxSelectedItemsType[]) => void
+  dataProvider: ComboBoxDataProviderType[]
+  onComplete: (value: ComboBoxSelectedItemsType[]) => void
   popoverRef: RefObject<HTMLDivElement>
   primaryColor?: string
   selectAllText?: string
   submitText?: string
-  value: comboBoxSelectedItemsType[]
+  value: ComboBoxSelectedItemsType[]
 }

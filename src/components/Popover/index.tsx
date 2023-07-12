@@ -17,7 +17,7 @@ import {
   performStateChange,
 } from '../../helpers'
 import SearchIcon from '../../Icons/Search'
-import { comboBoxSelectedItemsType } from '../../types/combobox'
+import { ComboBoxSelectedItemsType } from '../../types/combobox'
 import { popoverType } from '../../types/popover'
 import { IconContainer } from '../ComboBox/index.styled'
 import { ActionButton, TextButton } from '../Custom/Button'
@@ -37,8 +37,8 @@ export default function Popover({
   value,
 }: popoverType) {
   const [query, setQuery] = React.useState<string>('')
-  const [generatedOptions, setGeneratedOptions] = React.useState<comboBoxSelectedItemsType[]>([])
-  const [filteredOptions, setFilteredOptions] = React.useState<comboBoxSelectedItemsType[]>([])
+  const [generatedOptions, setGeneratedOptions] = React.useState<ComboBoxSelectedItemsType[]>([])
+  const [filteredOptions, setFilteredOptions] = React.useState<ComboBoxSelectedItemsType[]>([])
 
   React.useEffect(() => {
     setGeneratedOptions(generateOptions(dataProvider, value))
