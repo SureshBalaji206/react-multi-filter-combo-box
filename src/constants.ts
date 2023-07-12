@@ -8,7 +8,7 @@ export const defaultLocale = {
 
 export const defaultStyles = {
   backgroundColor: 'white',
-  borderStyle: '1px solid lightgray',
+  borderStyle: '1px solid hsl(0, 0%, 80%)',
   containerHeight: '330px',
   containerPadding: '0px 10px',
   containerWidth: '240px',

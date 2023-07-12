@@ -3,6 +3,8 @@ import { ThemeProviderPropsType } from '../../types'
 
 export const RootContainer = styled.div<ThemeProviderPropsType>`
   background-color: ${(props) => props.theme.colors.backgroundColor};
+  border: ${(props) => props.theme.styles.borderStyle};
+  border-radius: 4px;
   color: ${(props) => props.theme.colors.textColor};
   font-family: ${(props) => props.theme.styles.fontStyle};
   width: ${(props) => props.theme.styles.containerWidth};
@@ -31,5 +33,4 @@ export const ShowSelectedItemsContainer = styled.div<ThemeProviderPropsType>`
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
-  width: calc(100% - 80px);
 `
