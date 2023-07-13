@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import PropTypes from 'prop-types'
 import ComboBox from '../components/ComboBox'
 import { defaultStyles } from '../constants'
@@ -80,9 +80,10 @@ const dataProvider = [
   },
 ]
 
-export const SimpleComboBox = ({
+export const ComboBoxStory = ({
   backgroundColor,
   cancelText,
+  isSingleSelect,
   placeHolder,
   primaryColor,
   selectAllText,
@@ -90,6 +91,10 @@ export const SimpleComboBox = ({
   textColor,
 }: ComboBoxType) => {
   const [value, setValue] = useState<ComboBoxSelectedItemsType[]>([])
+
+  useEffect(() => {
+    setValue([])
+  }, [isSingleSelect])
 
   return (
     <AppThemeProvider
@@ -105,7 +110,7 @@ export const SimpleComboBox = ({
       <ComboBox
         cancelText={cancelText}
         dataProvider={dataProvider}
-        isSingleSelect={false}
+        isSingleSelect={isSingleSelect}
         leftAdornment={null}
         onComplete={(value: ComboBoxSelectedItemsType[]) => setValue(value)}
         placeHolder={placeHolder}
@@ -118,9 +123,10 @@ export const SimpleComboBox = ({
   )
 }
 
-SimpleComboBox.propTypes = {
+ComboBoxStory.propTypes = {
   backgroundColor: PropTypes.string,
   cancelText: PropTypes.string,
+  isSingleSelect: PropTypes.bool,
   placeHolder: PropTypes.string,
   primaryColor: PropTypes.string,
   selectAllText: PropTypes.string,
@@ -128,9 +134,10 @@ SimpleComboBox.propTypes = {
   textColor: PropTypes.string,
 }
 
-SimpleComboBox.defaultProps = {
+ComboBoxStory.defaultProps = {
   backgroundColor: '',
   cancelText: '',
+  isSingleSelect: false,
   placeHolder: '',
   primaryColor: '',
   selectAllText: '',

@@ -11,7 +11,7 @@ import {
   CheckboxContainer,
   ListContainerContainer,
   OnlyLabelContainer,
-  PopoverContainer,
+  MultiSelectPopoverContainer,
   RowContainer,
   SearchContainer,
   SelectAllContainer,
@@ -80,7 +80,7 @@ export default function MultiSelect({
   )
 
   return (
-    <PopoverContainer ref={popoverRef}>
+    <MultiSelectPopoverContainer ref={popoverRef}>
       <SearchContainer>
         <CheckboxContainer>
           <IconContainer>
@@ -107,7 +107,7 @@ export default function MultiSelect({
       <ListContainerContainer>
         {filteredOptions.map((dataItem) => {
           return (
-            <RowContainer key={dataItem.value}>
+            <RowContainer key={`cbms_opt_${dataItem.value}`}>
               <CheckboxContainer>
                 <input
                   type='checkbox'
@@ -146,6 +146,6 @@ export default function MultiSelect({
         <ActionButton clickHandler={closePopover} text={cancelText ? cancelText : ''} />
         <ActionButton clickHandler={completeHandler} text={submitText ? submitText : ''} />
       </ButtonsContainer>
-    </PopoverContainer>
+    </MultiSelectPopoverContainer>
   )
 }

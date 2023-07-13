@@ -1,8 +1,8 @@
-import { SimpleComboBox } from './SimpleComboBox'
+import { ComboBoxStory } from './ComboBox'
 
 const storyConfig = {
   title: 'Combo Box',
-  component: SimpleComboBox,
+  component: ComboBoxStory,
   tags: ['autodocs'],
   argTypes: {
     backgroundColor: { control: 'color' },
@@ -15,7 +15,8 @@ export const Simple = {
   args: {
     backgroundColor: 'white',
     cancelText: 'CANCEL',
-    placeHolder: 'Select a sport',
+    isSingleSelect: false,
+    placeHolder: 'Select sport(s)',
     primaryColor: 'unset',
     selectAllText: 'Select All',
     submitText: 'OK',

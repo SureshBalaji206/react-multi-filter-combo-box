@@ -47,7 +47,7 @@ export const generateOptions = (
       return {
         label: item.label,
         value: item.value,
-        isDisabled: item.isDisabled,
+        isDisabled: item.isDisabled ? item.isDisabled : false,
         isSelected: findIsSelected(selectedValues, item),
       }
     })

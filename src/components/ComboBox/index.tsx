@@ -1,11 +1,11 @@
-import React, { useCallback, useMemo, useState, useRef } from 'react'
+import React, { useCallback, useMemo, useState, useRef, useEffect } from 'react'
 import {
   RootContainer,
   DisplayContainer,
   IconContainer,
   ShowSelectedItemsContainer,
 } from './index.styled'
-import { getSelectedItemsPlaceHolder } from '../../helpers'
+import { generateOptions, getSelectedItemsPlaceHolder } from '../../helpers'
 import { useClickOutside } from '../../hooks/useClickOutside'
 import DownArraycon from '../../Icons/DownArrow'
 import { ComboBoxType } from '../../types/combobox'
@@ -26,6 +26,14 @@ export default function ComboBox({
   const popoverRef = useRef(null)
   const [toggle, setToggle] = useState<boolean>(false)
   const closePopover = useCallback(() => setToggle(false), [])
+
+  const [options, setOptions] = useState<any>([])
+
+  useEffect(() => {
+    const data = generateOptions(dataProvider, value)
+
+    setOptions(data)
+  }, [dataProvider, value])
 
   useClickOutside(popoverRef, closePopover)
 
@@ -60,6 +68,7 @@ export default function ComboBox({
           isSingleSelect={isSingleSelect}
           dataProvider={dataProvider}
           onComplete={onComplete}
+          options={options}
           popoverRef={popoverRef}
           selectAllText={selectAllText}
           submitText={submitText}
@@ -77,6 +86,7 @@ export default function ComboBox({
     dataProvider,
     isSingleSelect,
     onComplete,
+    options,
     selectAllText,
     submitText,
     value,

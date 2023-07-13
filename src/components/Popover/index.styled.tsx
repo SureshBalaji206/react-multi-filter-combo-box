@@ -1,11 +1,26 @@
 import styled from '@emotion/styled'
 import { ThemeProviderPropsType } from '../../types/theme'
 
-export const PopoverContainer = styled.div<ThemeProviderPropsType>`
+export const MultiSelectPopoverContainer = styled.div<ThemeProviderPropsType>`
   background-color: ${(props) => props.theme.colors.backgroundColor};
   color: ${(props) => props.theme.colors.textColor};
   height: ${(props) => props.theme.styles.containerHeight};
   width: ${(props) => props.theme.styles.containerWidth};
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  top: -1px;
+  left: -1px;
+  position: absolute;
+  z-index: 100;
+  margin: 0px;
+  padding: 2px;
+`
+
+export const SingleSelectPopoverContainer = styled.div<ThemeProviderPropsType>`
+  background-color: ${(props) => props.theme.colors.backgroundColor};
+  color: ${(props) => props.theme.colors.textColor};
+  max-height: 220px;
+  width: 240px;
+  overflow: auto;
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
   top: -1px;
   left: -1px;

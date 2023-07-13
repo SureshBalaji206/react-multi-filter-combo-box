@@ -1,29 +1,20 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import MultiSelect from './MultiSelect'
 import SingleSelect from './SingleSelect'
-import { generateOptions } from '../../helpers'
 import { popoverType } from '../../types/popover'
 
 export default function Popover({
   cancelText,
   closePopover,
-  dataProvider,
   isSingleSelect,
   onComplete,
+  options,
   popoverRef,
   primaryColor,
   selectAllText,
   submitText,
   value,
 }: popoverType) {
-  const [options, setOptions] = useState<any>([])
-
-  useEffect(() => {
-    const data = generateOptions(dataProvider, value)
-
-    setOptions(data)
-  }, [dataProvider, value])
-
   if (isSingleSelect) {
     return (
       <SingleSelect

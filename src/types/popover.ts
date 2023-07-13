@@ -7,6 +7,7 @@ export interface popoverType {
   dataProvider: ComboBoxDataProviderType[]
   isSingleSelect: boolean
   onComplete: (value: ComboBoxSelectedItemsType[]) => void
+  options: ComboBoxSelectedItemsType[]
   popoverRef: RefObject<HTMLDivElement>
   primaryColor?: string
   selectAllText?: string

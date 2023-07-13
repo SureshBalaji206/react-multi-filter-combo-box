@@ -1,9 +1,9 @@
 import React from 'react'
-import { PopoverContainer, RowContainer } from '../index.styled'
+import { SingleSelectPopoverContainer, RowContainer } from '../index.styled'
 
 export default function SingleSelect({ closePopover, onComplete, options, popoverRef }: any) {
   return (
-    <PopoverContainer ref={popoverRef}>
+    <SingleSelectPopoverContainer ref={popoverRef}>
       {options.map((option: any) => {
         return (
           <RowContainer
@@ -23,6 +23,6 @@ export default function SingleSelect({ closePopover, onComplete, options, popove
           </RowContainer>
         )
       })}
-    </PopoverContainer>
+    </SingleSelectPopoverContainer>
   )
 }
