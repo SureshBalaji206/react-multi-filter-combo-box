@@ -1,11 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { ComboBoxType } from '../types/combobox';
-export declare const SimpleComboBox: {
-    ({ backgroundColor, cancelText, placeHolder, primaryColor, selectAllText, submitText, textColor, }: ComboBoxType): React.JSX.Element;
+export declare const ComboBoxStory: {
+    ({ backgroundColor, cancelText, isSingleSelect, placeHolder, primaryColor, selectAllText, submitText, textColor, }: ComboBoxType): React.JSX.Element;
     propTypes: {
         backgroundColor: PropTypes.Requireable<string>;
         cancelText: PropTypes.Requireable<string>;
+        isSingleSelect: PropTypes.Requireable<boolean>;
         placeHolder: PropTypes.Requireable<string>;
         primaryColor: PropTypes.Requireable<string>;
         selectAllText: PropTypes.Requireable<string>;
@@ -15,6 +16,7 @@ export declare const SimpleComboBox: {
     defaultProps: {
         backgroundColor: string;
         cancelText: string;
+        isSingleSelect: boolean;
         placeHolder: string;
         primaryColor: string;
         selectAllText: string;

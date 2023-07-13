@@ -22,7 +22,6 @@ export default function Popover({
         onComplete={onComplete}
         options={options}
         popoverRef={popoverRef}
-        value={value}
       />
     )
   }

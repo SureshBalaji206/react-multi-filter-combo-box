@@ -1,6 +1,10 @@
-import { ComboBoxDataProviderType, ComboBoxSelectedItemsType } from './types/combobox'
+import {
+  ComboBoxDataProviderType,
+  ComboBoxOptionsType,
+  ComboBoxSelectedItemsType,
+} from './types/combobox'
 
-export const getSelectedItemsPlaceHolder = (selectedItems: ComboBoxSelectedItemsType[]) => {
+export const getSelectedItemsPlaceHolder = (selectedItems: ComboBoxOptionsType[]) => {
   return selectedItems
     .map((selectedItem) => selectedItem.label)
     .join(', ')
@@ -24,11 +28,13 @@ const sortAlphabetically = (
 }
 
 const findIsSelected = (
-  selectedValues: ComboBoxSelectedItemsType[],
+  selectedValues: ComboBoxOptionsType[] | ComboBoxOptionsType,
   item: ComboBoxDataProviderType
 ) => {
+  const convertedSelectedValues = Array.isArray(selectedValues) ? selectedValues : [selectedValues]
+
   return Boolean(
-    selectedValues.find((selectedValue) => {
+    convertedSelectedValues.find((selectedValue) => {
       return selectedValue.value === item.value
     })
   )
@@ -36,7 +42,7 @@ const findIsSelected = (
 
 export const generateOptions = (
   dataProvider: ComboBoxDataProviderType[],
-  selectedValues: ComboBoxSelectedItemsType[]
+  selectedValues: ComboBoxOptionsType[] | ComboBoxOptionsType
 ) => {
   if (dataProvider) {
     const sortedArray = dataProvider.sort((element1, element2) => {

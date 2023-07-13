@@ -8,7 +8,7 @@ import {
 import { generateOptions, getSelectedItemsPlaceHolder } from '../../helpers'
 import { useClickOutside } from '../../hooks/useClickOutside'
 import DownArraycon from '../../Icons/DownArrow'
-import { ComboBoxType } from '../../types/combobox'
+import { ComboBoxSelectedItemsType, ComboBoxType } from '../../types/combobox'
 import Popover from '../Popover'
 
 export default function ComboBox({
@@ -25,17 +25,16 @@ export default function ComboBox({
 }: ComboBoxType) {
   const popoverRef = useRef(null)
   const [toggle, setToggle] = useState<boolean>(false)
-  const closePopover = useCallback(() => setToggle(false), [])
+  const [options, setOptions] = useState<ComboBoxSelectedItemsType[]>([])
 
-  const [options, setOptions] = useState<any>([])
+  const closePopover = useCallback(() => setToggle(false), [])
+  useClickOutside(popoverRef, closePopover)
 
   useEffect(() => {
     const data = generateOptions(dataProvider, value)
 
     setOptions(data)
   }, [dataProvider, value])
-
-  useClickOutside(popoverRef, closePopover)
 
   const openPopover = () => {
     setToggle(true)
@@ -46,7 +45,9 @@ export default function ComboBox({
   }, [leftAdornment])
 
   const renderPlaceHolder = useMemo(() => {
-    return value.length ? getSelectedItemsPlaceHolder(value) : placeHolder
+    const convertedValue = Array.isArray(value) ? value : [value]
+
+    return convertedValue.length ? getSelectedItemsPlaceHolder(convertedValue) : placeHolder
   }, [value, placeHolder])
 
   const renderRightAdornment = useMemo(() => {

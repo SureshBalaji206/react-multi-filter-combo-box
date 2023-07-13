@@ -3,6 +3,7 @@ import { defaultLocale } from '../../../constants'
 import { performOnlyChange, performSelectAllChange, performStateChange } from '../../../helpers'
 import SearchIcon from '../../../Icons/Search'
 import { ComboBoxSelectedItemsType } from '../../../types/combobox'
+import { MultiSelectPropType } from '../../../types/popover'
 import { IconContainer } from '../../ComboBox/index.styled'
 import { ActionButton, TextButton } from '../../Custom/Button'
 import { CustomInput } from '../../Custom/Input'
@@ -28,7 +29,7 @@ export default function MultiSelect({
   primaryColor,
   selectAllText,
   submitText,
-}: any) {
+}: MultiSelectPropType) {
   const [query, setQuery] = useState<string>('')
   const [generatedOptions, setGeneratedOptions] = useState<ComboBoxSelectedItemsType[]>([])
   const [filteredOptions, setFilteredOptions] = useState<ComboBoxSelectedItemsType[]>([])

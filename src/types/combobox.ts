@@ -11,8 +11,13 @@ export interface ComboBoxDataProviderType {
   value: string | number
 }
 
+export interface ComboBoxOptionsType {
+  label: string
+  value: string | number
+}
+
 export interface ComboBoxSelectedItemsType {
-  isDisabled?: boolean
+  isDisabled: boolean
   isSelected: boolean
   label: string
   value: string | number
@@ -24,12 +29,12 @@ export interface ComboBoxType {
   dataProvider: ComboBoxDataProviderType[]
   isSingleSelect: boolean
   leftAdornment?: ReactNode
-  onComplete?: (value: ComboBoxSelectedItemsType[]) => void
+  onComplete?: (value: ComboBoxOptionsType[] | ComboBoxOptionsType) => void
   placeHolder?: string
   primaryColor?: string
   rightAdornment?: ReactNode
   selectAllText?: string
   submitText?: string
-  value?: ComboBoxSelectedItemsType[]
+  value?: ComboBoxOptionsType[] | ComboBoxOptionsType
   textColor?: string
 }

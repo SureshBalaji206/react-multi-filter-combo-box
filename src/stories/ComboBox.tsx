@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import ComboBox from '../components/ComboBox'
 import { defaultStyles } from '../constants'
 import AppThemeProvider from '../context/ThemeContext'
-import { ComboBoxSelectedItemsType, ComboBoxType } from '../types/combobox'
+import { ComboBoxOptionsType, ComboBoxType } from '../types/combobox'
 
 const dataProvider = [
   {
@@ -90,7 +90,7 @@ export const ComboBoxStory = ({
   submitText,
   textColor,
 }: ComboBoxType) => {
-  const [value, setValue] = useState<ComboBoxSelectedItemsType[]>([])
+  const [value, setValue] = useState<ComboBoxOptionsType[] | ComboBoxOptionsType>([])
 
   useEffect(() => {
     setValue([])
@@ -112,7 +112,7 @@ export const ComboBoxStory = ({
         dataProvider={dataProvider}
         isSingleSelect={isSingleSelect}
         leftAdornment={null}
-        onComplete={(value: ComboBoxSelectedItemsType[]) => setValue(value)}
+        onComplete={(value: ComboBoxOptionsType[] | ComboBoxOptionsType) => setValue(value)}
         placeHolder={placeHolder}
         rightAdornment={null}
         selectAllText={selectAllText}

@@ -1,6 +1,10 @@
 /// <reference types="react" />
 import { ThemeProviderPropsType } from '../../types/theme';
-export declare const PopoverContainer: import("@emotion/styled").StyledComponent<{
+export declare const MultiSelectPopoverContainer: import("@emotion/styled").StyledComponent<{
+    theme?: import("@emotion/react").Theme | undefined;
+    as?: import("react").ElementType<any> | undefined;
+} & ThemeProviderPropsType, import("react").DetailedHTMLProps<import("react").HTMLAttributes<HTMLDivElement>, HTMLDivElement>, {}>;
+export declare const SingleSelectPopoverContainer: import("@emotion/styled").StyledComponent<{
     theme?: import("@emotion/react").Theme | undefined;
     as?: import("react").ElementType<any> | undefined;
 } & ThemeProviderPropsType, import("react").DetailedHTMLProps<import("react").HTMLAttributes<HTMLDivElement>, HTMLDivElement>, {}>;

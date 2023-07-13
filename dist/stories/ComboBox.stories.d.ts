@@ -1,10 +1,11 @@
 declare const storyConfig: {
     title: string;
     component: {
-        ({ backgroundColor, cancelText, placeHolder, primaryColor, selectAllText, submitText, textColor, }: import("../types/combobox").ComboBoxType): import("react").JSX.Element;
+        ({ backgroundColor, cancelText, isSingleSelect, placeHolder, primaryColor, selectAllText, submitText, textColor, }: import("../types/combobox").ComboBoxType): import("react").JSX.Element;
         propTypes: {
             backgroundColor: import("prop-types").Requireable<string>;
             cancelText: import("prop-types").Requireable<string>;
+            isSingleSelect: import("prop-types").Requireable<boolean>;
             placeHolder: import("prop-types").Requireable<string>;
             primaryColor: import("prop-types").Requireable<string>;
             selectAllText: import("prop-types").Requireable<string>;
@@ -14,6 +15,7 @@ declare const storyConfig: {
         defaultProps: {
             backgroundColor: string;
             cancelText: string;
+            isSingleSelect: boolean;
             placeHolder: string;
             primaryColor: string;
             selectAllText: string;
@@ -38,6 +40,7 @@ export declare const Simple: {
     args: {
         backgroundColor: string;
         cancelText: string;
+        isSingleSelect: boolean;
         placeHolder: string;
         primaryColor: string;
         selectAllText: string;
