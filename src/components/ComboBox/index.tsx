@@ -14,6 +14,7 @@ import Popover from '../Popover'
 export default function ComboBox({
   cancelText,
   dataProvider,
+  isSingleSelect,
   leftAdornment,
   onComplete = () => null,
   placeHolder,
@@ -56,6 +57,7 @@ export default function ComboBox({
         <Popover
           cancelText={cancelText}
           closePopover={closePopover}
+          isSingleSelect={isSingleSelect}
           dataProvider={dataProvider}
           onComplete={onComplete}
           popoverRef={popoverRef}
@@ -73,6 +75,7 @@ export default function ComboBox({
     cancelText,
     closePopover,
     dataProvider,
+    isSingleSelect,
     onComplete,
     selectAllText,
     submitText,

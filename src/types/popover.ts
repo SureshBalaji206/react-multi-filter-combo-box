@@ -5,6 +5,7 @@ export interface popoverType {
   cancelText?: string
   closePopover: () => void
   dataProvider: ComboBoxDataProviderType[]
+  isSingleSelect: boolean
   onComplete: (value: ComboBoxSelectedItemsType[]) => void
   popoverRef: RefObject<HTMLDivElement>
   primaryColor?: string

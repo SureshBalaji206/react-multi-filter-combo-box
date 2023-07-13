@@ -22,6 +22,7 @@ export interface ComboBoxType {
   backgroundColor?: string
   cancelText?: string
   dataProvider: ComboBoxDataProviderType[]
+  isSingleSelect: boolean
   leftAdornment?: ReactNode
   onComplete?: (value: ComboBoxSelectedItemsType[]) => void
   placeHolder?: string

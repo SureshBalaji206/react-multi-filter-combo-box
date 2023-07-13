@@ -7,11 +7,12 @@ export const PopoverContainer = styled.div<ThemeProviderPropsType>`
   height: ${(props) => props.theme.styles.containerHeight};
   width: ${(props) => props.theme.styles.containerWidth};
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-  top: 0;
-  left: 0;
+  top: -1px;
+  left: -1px;
   position: absolute;
   z-index: 100;
   margin: 0px;
+  padding: 2px;
 `
 
 export const SearchContainer = styled.div<ThemeProviderPropsType>`

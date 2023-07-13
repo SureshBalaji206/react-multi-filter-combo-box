@@ -105,6 +105,7 @@ export const SimpleComboBox = ({
       <ComboBox
         cancelText={cancelText}
         dataProvider={dataProvider}
+        isSingleSelect={false}
         leftAdornment={null}
         onComplete={(value: ComboBoxSelectedItemsType[]) => setValue(value)}
         placeHolder={placeHolder}

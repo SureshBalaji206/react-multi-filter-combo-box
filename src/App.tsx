@@ -8,6 +8,7 @@ export default function App({
   backgroundColor = defaultStyles.backgroundColor,
   cancelText = defaultLocale.cancel,
   dataProvider = [],
+  isSingleSelect = false,
   leftAdornment = null,
   onComplete = () => null,
   placeHolder = defaultLocale.placeHolder,
@@ -32,6 +33,7 @@ export default function App({
       <ComboBox
         cancelText={cancelText}
         dataProvider={dataProvider}
+        isSingleSelect={isSingleSelect}
         leftAdornment={leftAdornment}
         onComplete={onComplete}
         placeHolder={placeHolder}
